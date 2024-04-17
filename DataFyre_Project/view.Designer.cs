@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(view));
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btmShowData = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ComboBoxLinkType = new System.Windows.Forms.ComboBox();
             this.ComboBoxSubCategory = new System.Windows.Forms.ComboBox();
             this.subcategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,6 +61,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet1BindingSource)).BeginInit();
@@ -131,7 +132,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(175, 107);
+            this.label4.Location = new System.Drawing.Point(179, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 19);
             this.label4.TabIndex = 63;
@@ -141,7 +142,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(179, 149);
+            this.label3.Location = new System.Drawing.Point(179, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 19);
             this.label3.TabIndex = 62;
@@ -151,7 +152,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 63);
+            this.label1.Location = new System.Drawing.Point(179, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 19);
             this.label1.TabIndex = 61;
@@ -166,7 +167,7 @@
             this.btmShowData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btmShowData.Font = new System.Drawing.Font("Roboto", 12F);
             this.btmShowData.ForeColor = System.Drawing.Color.White;
-            this.btmShowData.Location = new System.Drawing.Point(693, 190);
+            this.btmShowData.Location = new System.Drawing.Point(693, 208);
             this.btmShowData.Name = "btmShowData";
             this.btmShowData.Size = new System.Drawing.Size(97, 27);
             this.btmShowData.TabIndex = 60;
@@ -174,30 +175,12 @@
             this.btmShowData.UseVisualStyleBackColor = false;
             this.btmShowData.Click += new System.EventHandler(this.btmShowData_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(180, 29);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(291, 27);
-            this.textBox1.TabIndex = 59;
-            this.textBox1.Text = "Please Select From Options Given Below";
-            // 
             // ComboBoxLinkType
             // 
             this.ComboBoxLinkType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxLinkType.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxLinkType.FormattingEnabled = true;
-            this.ComboBoxLinkType.Location = new System.Drawing.Point(333, 147);
+            this.ComboBoxLinkType.Location = new System.Drawing.Point(336, 173);
             this.ComboBoxLinkType.Name = "ComboBoxLinkType";
             this.ComboBoxLinkType.Size = new System.Drawing.Size(457, 27);
             this.ComboBoxLinkType.TabIndex = 58;
@@ -209,7 +192,7 @@
             this.ComboBoxSubCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxSubCategory.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxSubCategory.FormattingEnabled = true;
-            this.ComboBoxSubCategory.Location = new System.Drawing.Point(332, 104);
+            this.ComboBoxSubCategory.Location = new System.Drawing.Point(335, 130);
             this.ComboBoxSubCategory.Name = "ComboBoxSubCategory";
             this.ComboBoxSubCategory.Size = new System.Drawing.Size(458, 27);
             this.ComboBoxSubCategory.TabIndex = 57;
@@ -226,7 +209,7 @@
             this.ComboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxCategory.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxCategory.FormattingEnabled = true;
-            this.ComboBoxCategory.Location = new System.Drawing.Point(332, 60);
+            this.ComboBoxCategory.Location = new System.Drawing.Point(336, 82);
             this.ComboBoxCategory.Name = "ComboBoxCategory";
             this.ComboBoxCategory.Size = new System.Drawing.Size(458, 27);
             this.ComboBoxCategory.TabIndex = 56;
@@ -265,7 +248,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(183, 235);
+            this.dataGridView1.Location = new System.Drawing.Point(183, 253);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -404,18 +387,34 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(179, 32);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(375, 25);
+            this.bunifuLabel1.TabIndex = 66;
+            this.bunifuLabel1.Text = "Please Select From Options Given Below";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(829, 520);
+            this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btmShowData);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ComboBoxLinkType);
             this.Controls.Add(this.ComboBoxSubCategory);
             this.Controls.Add(this.ComboBoxCategory);
@@ -453,7 +452,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btmShowData;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox ComboBoxLinkType;
         private System.Windows.Forms.ComboBox ComboBoxSubCategory;
         private System.Windows.Forms.ComboBox ComboBoxCategory;
@@ -475,5 +473,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
     }
 }
