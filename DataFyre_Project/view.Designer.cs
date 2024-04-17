@@ -62,7 +62,18 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblcategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet8BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet7BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet6BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -224,14 +235,7 @@
             // 
             // subcategoryBindingSource
             // 
-            this.subcategoryBindingSource.DataMember = "subcategory_name";
             this.subcategoryBindingSource.DataSource = this.datasiencedbDataSet1BindingSource;
-            // 
-            // datasiencedbDataSet1BindingSource
-            // 
-            this.datasiencedbDataSet1BindingSource.Position = 0;
-            // 
-            // datasience_dbDataSet1
             // 
             // ComboBoxCategory
             // 
@@ -249,35 +253,11 @@
             // 
             // tblcategoryBindingSource
             // 
-            this.tblcategoryBindingSource.DataMember = "category";
             this.tblcategoryBindingSource.DataSource = this.datasiencedbDataSetBindingSource;
-            // 
-            // datasiencedbDataSetBindingSource
-            // 
-            this.datasiencedbDataSetBindingSource.Position = 0;
-            // 
-            // datasience_dbDataSet
-            // 
-            // 
-            // datasience_dbDataSet8
-            // 
-            // datasiencedbDataSet8BindingSource
-            // 
-            this.datasiencedbDataSet8BindingSource.Position = 0;
-            // 
-            // 
-            this.datasiencedbDataSet7BindingSource.Position = 0;
-            // 
-            // 
-            this.datasiencedbDataSet6BindingSource.Position = 0;
             // 
             // usersBindingSource
             // 
-            this.usersBindingSource.DataMember = "users";
             this.usersBindingSource.DataSource = this.datasiencedbDataSet6BindingSource;
-            // 
-            // usersTableAdapter
-            // 
             // 
             // dataGridView1
             // 
@@ -319,11 +299,11 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(607, 242);
             this.dataGridView1.TabIndex = 64;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.button7);
             this.panel6.Controls.Add(this.button5);
@@ -375,7 +355,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 191);
+            this.button5.Location = new System.Drawing.Point(0, 200);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(164, 47);
             this.button5.TabIndex = 34;
@@ -389,7 +369,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 241);
+            this.button4.Location = new System.Drawing.Point(0, 319);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 47);
             this.button4.TabIndex = 33;
@@ -441,6 +421,21 @@
             this.button6.Text = "Category";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(3, 253);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 60);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Link Contents";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // view
             // 
@@ -514,5 +509,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
     }
 }

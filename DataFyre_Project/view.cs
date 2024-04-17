@@ -147,11 +147,6 @@ namespace datascience_project
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
-
         private void btmShowData_Click(object sender, EventArgs e)
         {
             try
@@ -163,7 +158,15 @@ namespace datascience_project
                 SqlDataAdapter cmd = new SqlDataAdapter("select * from link where sub_category_id = '"+int.Parse(subcategory) + "' and link_type = '"+linktype+"'", con);
                 DataTable dt = new DataTable();
                 cmd.Fill(dt);
-                dataGridView1.DataSource = dt;
+                if(dt.Rows.Count>0)
+                {
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("No Data Available");
+                }
+                
             }
             catch (Exception ee)
             {
@@ -206,6 +209,12 @@ namespace datascience_project
         {
             this.Hide();
             new LoginPage().ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new View_Link_Content().ShowDialog();
         }
     }
 }

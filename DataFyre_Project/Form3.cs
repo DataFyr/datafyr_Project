@@ -168,9 +168,10 @@ namespace datascience_project
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void dashboardbtn_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new View_Link_Content().ShowDialog();
         }
     }
 }

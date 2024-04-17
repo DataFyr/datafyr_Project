@@ -40,8 +40,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.user_fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.linkBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.linkBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -55,6 +53,7 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.dashboardbtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -69,6 +68,9 @@
             this.ddl_sub_category_name = new System.Windows.Forms.ComboBox();
             this.ddll_link_type = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Browse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.linkBindingSource3)).BeginInit();
@@ -83,9 +85,6 @@
             // subcategoryBindingSource
             // 
             this.subcategoryBindingSource.DataMember = "subcategory";
-            // 
-            // datasience_dbDataSet3
-            // 
             // 
             // label1
             // 
@@ -196,6 +195,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Browse,
             this.user_fullname,
             this.date});
             this.dataGridView1.Location = new System.Drawing.Point(189, 367);
@@ -207,54 +207,21 @@
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // user_fullname
-            // 
-            this.user_fullname.DataPropertyName = "user_fullname";
-            this.user_fullname.HeaderText = "user_fullname";
-            this.user_fullname.Name = "user_fullname";
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "date";
-            this.date.Name = "date";
-            // 
             // linkBindingSource3
             // 
             this.linkBindingSource3.DataMember = "link";
-            // 
-            // datasience_dbDataSet8
-            // 
             // 
             // linkBindingSource2
             // 
             this.linkBindingSource2.DataMember = "link";
             // 
-            // datasience_dbDataSet7
-            // 
-            // 
             // linkBindingSource1
             // 
             this.linkBindingSource1.DataMember = "link";
             // 
-            // datasience_dbDataSet4
-            // 
-            // 
-            // datasience_dbDataSet2
-            // 
-            // 
             // linkBindingSource
             // 
             this.linkBindingSource.DataMember = "link";
-            // 
-            // linkTableAdapter
-            // 
-            // 
-            // subcategoryTableAdapter
-            // 
-            // 
-            // linkTableAdapter1
-            // 
             // 
             // button1
             // 
@@ -286,12 +253,6 @@
             this.datetime.Name = "datetime";
             this.datetime.Size = new System.Drawing.Size(217, 20);
             this.datetime.TabIndex = 24;
-            // 
-            // linkTableAdapter2
-            // 
-            // 
-            // linkTableAdapter3
-            // 
             // 
             // panel5
             // 
@@ -363,6 +324,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.panel6.Controls.Add(this.button8);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.button7);
             this.panel6.Controls.Add(this.button5);
@@ -375,6 +337,21 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(167, 494);
             this.panel6.TabIndex = 42;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(3, 235);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(164, 60);
+            this.button8.TabIndex = 38;
+            this.button8.Text = "Link Contents";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // dashboardbtn
             // 
@@ -428,7 +405,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 241);
+            this.button4.Location = new System.Drawing.Point(0, 292);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 47);
             this.button4.TabIndex = 33;
@@ -566,6 +543,23 @@
             this.label5.TabIndex = 47;
             this.label5.Text = "Link Type";
             // 
+            // Browse
+            // 
+            this.Browse.HeaderText = "Content";
+            this.Browse.Name = "Browse";
+            // 
+            // user_fullname
+            // 
+            this.user_fullname.DataPropertyName = "user_fullname";
+            this.user_fullname.HeaderText = "user_fullname";
+            this.user_fullname.Name = "user_fullname";
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "date";
+            this.date.Name = "date";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,8 +624,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker datetime;
         private System.Windows.Forms.BindingSource linkBindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn user_fullname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.BindingSource linkBindingSource3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
@@ -654,5 +646,9 @@
         private System.Windows.Forms.ComboBox ddll_link_type;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.BindingSource tblcategoryBindingSource;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Browse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_fullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
     }
 }
