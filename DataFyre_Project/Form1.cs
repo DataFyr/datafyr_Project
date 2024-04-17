@@ -223,5 +223,16 @@ namespace datascience_project
                 MessageBox.Show(ee.Message);
             }
         }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new import_file().ShowDialog();
+        }
     }
 }

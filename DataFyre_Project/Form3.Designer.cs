@@ -57,6 +57,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_total_category = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,6 +73,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.panel6.Controls.Add(this.button6);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.btnLogout);
             this.panel6.Controls.Add(this.btnView);
@@ -437,6 +439,21 @@
             this.label_total_category.Size = new System.Drawing.Size(0, 26);
             this.label_total_category.TabIndex = 1;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(3, 286);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(164, 47);
+            this.button6.TabIndex = 39;
+            this.button6.Text = "Import";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,5 +520,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_total_category;
         private System.Windows.Forms.Button dashboardbtn;
+        private System.Windows.Forms.Button button6;
     }
 }
