@@ -63,16 +63,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblcategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet8BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet7BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasiencedbDataSet6BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,7 +224,7 @@
             // 
             // subcategoryBindingSource
             // 
-            this.subcategoryBindingSource.DataMember = "subcategory";
+            this.subcategoryBindingSource.DataMember = "subcategory_name";
             this.subcategoryBindingSource.DataSource = this.datasiencedbDataSet1BindingSource;
             // 
             // datasiencedbDataSet1BindingSource
@@ -259,7 +249,7 @@
             // 
             // tblcategoryBindingSource
             // 
-            this.tblcategoryBindingSource.DataMember = "tbl_category";
+            this.tblcategoryBindingSource.DataMember = "category";
             this.tblcategoryBindingSource.DataSource = this.datasiencedbDataSetBindingSource;
             // 
             // datasiencedbDataSetBindingSource

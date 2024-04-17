@@ -40,7 +40,7 @@ namespace datascience_project
             {
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlCommand sqlCommand = new SqlCommand("select count(categoryid) from tbl_category",con);
+                SqlCommand sqlCommand = new SqlCommand("select count(categoryid) from category",con);
                 int total_categories = int.Parse(sqlCommand.ExecuteScalar().ToString());
                 label_total_category.Text = total_categories.ToString();
                 con.Close();

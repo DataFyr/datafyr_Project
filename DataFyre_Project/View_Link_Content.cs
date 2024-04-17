@@ -15,6 +15,9 @@ namespace datascience_project
 {
     public partial class View_Link_Content : Form
     {
+        HashSet<string> selectedSentencesAdded = new HashSet<string>();
+
+        Color[] highlightColors = {Color.Yellow,Color.Cyan,Color.Magenta,Color.Orange,Color.LightBlue,Color.LightGreen,Color.LightPink,Color.LightSalmon,Color.LightSeaGreen,Color.LightSkyBlue,Color.LightSteelBlue,Color.LightYellow};
         SpeechSynthesizer synthesizer;
         private static readonly HashSet<string> StopWords = new HashSet<string>
         {
@@ -108,86 +111,114 @@ namespace datascience_project
             {
                 lstWordOccurrence.Items.Add($"{pair.Key}: {pair.Value}");
             }
-
-            // Clear existing data in chart
-            chart1.Series.Clear();
-
-            // Add new series to chart
-            Series series = chart1.Series.Add("Word Occurrences");
-
-            // Populate data from wordCount dictionary into chart
-            foreach (var pair in wordCount)
-            {
-                series.Points.AddXY(pair.Key, pair.Value);
-            }
         }
 
         private void lstWordOccurrence_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ensure that at least one item is selected
-            if (lstWordOccurrence.SelectedIndex != -1)
+
+            // Get the selected word from the list box
+            string selectedWord = lstWordOccurrence.SelectedItem?.ToString();
+            string textOnly = Regex.Replace(selectedWord, @"[^a-zA-Z]+", "");
+
+            if (!string.IsNullOrEmpty(textOnly))
             {
-                // Get the selected item
-                string selectedItem = lstWordOccurrence.SelectedItem.ToString();
-                // Define a regular expression pattern to match alphabetic characters
-                string pattern = "[^a-zA-Z]+";
+                // Get the text from the textbox
+                string text = view_content_textbox.Text;
 
-                // Create a Regex object
-                Regex regex = new Regex(pattern);
+                // Split the text into sentences using a regular expression
+                string[] sentences = Regex.Split(text, @"(?<=[\.!\?])\s+");
 
-                // Use Regex.Replace method to remove non-alphabetic characters
-                string filteredSentence = regex.Replace(selectedItem, "");
-
-
-                // Find the sentence containing the selected word
-                foreach (string sentence in view_content_textbox.Lines)
+                // Loop through each sentence
+                for (int i = 0; i < sentences.Length; i++)
                 {
                     // Check if the sentence contains the selected word
-                    if (sentence.Contains(filteredSentence))
+                    if (sentences[i].Contains(textOnly))
                     {
-                        // Highlight the entire sentence
-                        HighlightSentence(sentence);
-                        break; // Exit the loop after highlighting the first occurrence
+                        // Find the index of the current sentence in the textbox text
+                        int startIndex = text.IndexOf(sentences[i]);
+
+                        // Check if the sentence is already highlighted
+                        bool alreadyHighlighted = IsSentenceHighlighted(startIndex, sentences[i].Length);
+
+                        // If the sentence is not already highlighted, highlight it
+                        if (!alreadyHighlighted)
+                        {
+                            // Select the sentence
+                            view_content_textbox.Select(startIndex, sentences[i].Length);
+
+                            // Apply a different highlight color to each sentence
+                            view_content_textbox.SelectionBackColor = highlightColors[i % highlightColors.Length];
+
+                            // Ensure the textbox has focus
+                            view_content_textbox.Focus();
+                        }
                     }
-                }
-
-                // Remove numeric value after colon (:) symbol
-                int colonIndex = selectedItem.IndexOf(':');
-                if (colonIndex != -1)
-                {
-                    selectedItem = selectedItem.Substring(0, colonIndex);
-                }
-
-                // Check if the item already exists in the column
-                bool itemExists = false;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (row.Cells["columnKeyword"].Value != null && row.Cells["columnKeyword"].Value.ToString() == selectedItem)
-                    {
-                        itemExists = true;
-                        break;
-                    }
-                }
-
-                // Add the item only if it doesn't already exist
-                if (!itemExists)
-                {
-                    int rowIndex = dataGridView1.Rows.Add();
-                    dataGridView1.Rows[rowIndex].Cells["columnKeyword"].Value = selectedItem;
                 }
             }
         }
-        private void HighlightSentence(string sentence)
-        {
-            // Find the index of the sentence in the textbox text
-            int startIndex = view_content_textbox.Text.IndexOf(sentence);
 
-            // If the sentence is found, select and highlight it
-            if (startIndex != -1)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private bool IsSentenceHighlighted(int startIndex, int length)
+        {
+            // Get the selection start and length
+            int selectionStart = view_content_textbox.SelectionStart;
+            int selectionLength = view_content_textbox.SelectionLength;
+
+            // Check if the current sentence overlaps with the selection
+            if (startIndex <= selectionStart + selectionLength &&
+                startIndex + length >= selectionStart)
             {
-                view_content_textbox.Select(startIndex, sentence.Length);
-                view_content_textbox.SelectionBackColor = Color.Yellow; // Change background color
-                view_content_textbox.Focus(); // Ensure the textbox has focus
+                return true;
+            }
+
+            return false;
+        }
+
+        private void view_content_textbox_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private string GetClickedSentence()
+        {
+            // Get the index of the clicked character in the TextBox
+            int clickedIndex = view_content_textbox.SelectionStart;
+
+            // Find the start and end indices of the clicked sentence
+            int startIndex = clickedIndex;
+            while (startIndex > 0 && !".!?".Contains(view_content_textbox.Text[startIndex - 1]))
+            {
+                startIndex--;
+            }
+
+            int endIndex = clickedIndex;
+            while (endIndex < view_content_textbox.Text.Length - 1 && !".!?".Contains(view_content_textbox.Text[endIndex]))
+            {
+                endIndex++;
+            }
+
+            // Extract the clicked sentence from the TextBox
+            string clickedSentence = view_content_textbox.Text.Substring(startIndex, endIndex - startIndex + 1);
+
+            return clickedSentence;
+        }
+
+        private void view_content_textbox_MouseUp(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void view_content_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            int startIndex = view_content_textbox.SelectionStart;
+            int length = view_content_textbox.SelectionLength;
+
+            // Check if any text is selected
+            if (length > 0)
+            {
+                // Perform your desired action with the selected text
+                string selectedText = view_content_textbox.Text.Substring(startIndex, length);
+                dataGridView1.Rows.Add(selectedText);
             }
         }
     }
