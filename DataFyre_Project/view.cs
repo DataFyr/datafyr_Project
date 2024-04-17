@@ -30,7 +30,7 @@ namespace datascience_project
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void view_Load(object sender, EventArgs e)
         {
-
+            fillCategory();
         }
 
         private void BtnClick_Click(object sender, EventArgs e)
@@ -116,12 +116,29 @@ namespace datascience_project
                 string category_name = ComboBoxCategory.Text;
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlDataAdapter cmd = new SqlDataAdapter("select subcategory.subcategory_name,subcategory.subcategory_id from tbl_category inner join subcategory on subcategory.category_id = tbl_category.categoryid where tbl_category.category_name = '" + category_name + "'", con);
+                SqlDataAdapter cmd = new SqlDataAdapter("select subcategory.subcategory_name,subcategory.subcategory_id from category inner join subcategory on subcategory.category_id = category.categoryid where category.category_name = '" + category_name + "'", con);
                 DataTable dt = new DataTable();
                 cmd.Fill(dt);
                 ComboBoxSubCategory.DataSource = dt;
                 ComboBoxSubCategory.ValueMember = "subcategory_id";
                 ComboBoxSubCategory.DisplayMember = "subcategory_name";
+            }
+            catch (Exception ee)
+            {
+
+                MessageBox.Show(ee.Message);
+            }
+        }
+        public void fillCategory()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
+                con.Open();
+                SqlDataAdapter cmd = new SqlDataAdapter("select * from category", con);
+                DataTable dt = new DataTable();
+                cmd.Fill(dt);
+                ComboBoxCategory.DataSource = dt;
             }
             catch (Exception ee)
             {
