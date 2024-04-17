@@ -39,7 +39,6 @@
             this.btnCategory = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -100,7 +99,6 @@
             this.dashboardbtn.Text = "Dashboard";
             this.dashboardbtn.UseVisualStyleBackColor = false;
             this.dashboardbtn.CausesValidationChanged += new System.EventHandler(this.Form3_Load);
-            this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
             // 
             // btnLogout
             // 
@@ -196,7 +194,6 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.btnMaximize);
             this.panel5.Controls.Add(this.btnMinimize);
             this.panel5.Controls.Add(this.btnClose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -204,6 +201,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(829, 26);
             this.panel5.TabIndex = 11;
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
             // label2
             // 
@@ -212,25 +210,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 7);
             this.label2.Name = "label2";
-
             this.label2.Size = new System.Drawing.Size(67, 14);
             this.label2.TabIndex = 6;
             this.label2.Text = "Dashboard";
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(781, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(20, 20);
-            this.btnMaximize.TabIndex = 5;
-            this.btnMaximize.Text = "▢";
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnMinimize
             // 
@@ -238,7 +220,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(755, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(781, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(20, 20);
             this.btnMinimize.TabIndex = 4;
@@ -452,7 +434,7 @@
             this.label_total_category.Location = new System.Drawing.Point(150, 81);
             this.label_total_category.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_total_category.Name = "label_total_category";
-            this.label_total_category.Size = new System.Drawing.Size(0, 19);
+            this.label_total_category.Size = new System.Drawing.Size(0, 26);
             this.label_total_category.TabIndex = 1;
             // 
             // Form3
@@ -502,7 +484,6 @@
         private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel3;

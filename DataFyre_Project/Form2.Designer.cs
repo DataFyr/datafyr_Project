@@ -51,7 +51,6 @@
             this.datetime = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -83,9 +82,6 @@
             // subcategoryBindingSource
             // 
             this.subcategoryBindingSource.DataMember = "subcategory";
-            // 
-            // datasience_dbDataSet3
-            // 
             // 
             // label1
             // 
@@ -223,38 +219,17 @@
             // 
             this.linkBindingSource3.DataMember = "link";
             // 
-            // datasience_dbDataSet8
-            // 
-            // 
             // linkBindingSource2
             // 
             this.linkBindingSource2.DataMember = "link";
-            // 
-            // datasience_dbDataSet7
-            // 
             // 
             // linkBindingSource1
             // 
             this.linkBindingSource1.DataMember = "link";
             // 
-            // datasience_dbDataSet4
-            // 
-            // 
-            // datasience_dbDataSet2
-            // 
-            // 
             // linkBindingSource
             // 
             this.linkBindingSource.DataMember = "link";
-            // 
-            // linkTableAdapter
-            // 
-            // 
-            // subcategoryTableAdapter
-            // 
-            // 
-            // linkTableAdapter1
-            // 
             // 
             // button1
             // 
@@ -287,17 +262,10 @@
             this.datetime.Size = new System.Drawing.Size(217, 20);
             this.datetime.TabIndex = 24;
             // 
-            // linkTableAdapter2
-            // 
-            // 
-            // linkTableAdapter3
-            // 
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.btnMaximize);
             this.panel5.Controls.Add(this.btnMinimize);
             this.panel5.Controls.Add(this.btnClose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -305,6 +273,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(829, 26);
             this.panel5.TabIndex = 41;
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
             // label7
             // 
@@ -317,28 +286,13 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Links";
             // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(781, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(20, 20);
-            this.btnMaximize.TabIndex = 5;
-            this.btnMaximize.Text = "▢";
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
             // btnMinimize
             // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(755, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(780, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(20, 20);
             this.btnMinimize.TabIndex = 4;
@@ -389,6 +343,7 @@
             this.dashboardbtn.TabIndex = 37;
             this.dashboardbtn.Text = "Dashboard";
             this.dashboardbtn.UseVisualStyleBackColor = false;
+            this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
             // 
             // button7
             // 
@@ -635,7 +590,6 @@
         private System.Windows.Forms.BindingSource linkBindingSource3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel6;

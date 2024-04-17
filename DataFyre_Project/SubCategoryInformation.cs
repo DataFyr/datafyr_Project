@@ -81,6 +81,7 @@ namespace datascience_project
             btnUpdate.Enabled = false;
             fillCategoryCombo();
             fillSubCategoryGrid();
+            dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -218,7 +219,7 @@ namespace datascience_project
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            //Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void panel5_MouseDown(object sender, MouseEventArgs e)
