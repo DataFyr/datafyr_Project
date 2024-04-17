@@ -34,6 +34,7 @@ namespace datascience_project
             showInformation();
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+            fillCategoryGridUser();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace datascience_project
                     MessageBox.Show("user information added successfully.");
                     showInformation();
                     clearFields();
+                    fillCategoryGridUser();
                 }
                 catch (Exception ee)
                 {
@@ -106,6 +108,7 @@ namespace datascience_project
                     MessageBox.Show("user information update successfully.");
                     showInformation();
                     clearFields();
+                    fillCategoryGridUser();
                 }
                 catch (Exception ee)
                 {
@@ -136,6 +139,7 @@ namespace datascience_project
                     MessageBox.Show("user information deleted successfully.");
                     showInformation();
                     clearFields();
+                    fillCategoryGridUser();
                 }
                 catch (Exception ee)
                 {
@@ -184,6 +188,45 @@ namespace datascience_project
         {
             this.Hide();
             new LoginPage().ShowDialog();
+        }
+        public void fillCategoryGridUser()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
+                con.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("select * from users", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                datagridUsers.DataSource = dt;
+            }
+            catch (Exception ee)
+            {
+
+                MessageBox.Show(ee.Message);
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dashboardbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form3().ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new view().ShowDialog();
         }
     }
 }
