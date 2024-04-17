@@ -355,5 +355,17 @@ namespace datascience_project
                 MessageBox.Show(ee.Message);
             }
         }
+
+        private void dashboardbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form3().ShowDialog();
+        }
+
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
