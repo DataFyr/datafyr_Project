@@ -68,7 +68,6 @@
             this.ddl_sub_category_name = new System.Windows.Forms.ComboBox();
             this.ddll_link_type = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.linkBindingSource3)).BeginInit();
@@ -283,7 +282,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 16);
+            this.label7.Size = new System.Drawing.Size(38, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Links";
             // 
@@ -318,7 +317,6 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.panel6.Controls.Add(this.button8);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.button7);
             this.panel6.Controls.Add(this.button5);
@@ -523,21 +521,6 @@
             this.label5.TabIndex = 47;
             this.label5.Text = "Link Type";
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(0, 288);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(164, 47);
-            this.button8.TabIndex = 39;
-            this.button8.Text = "Import";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -625,6 +608,5 @@
         private System.Windows.Forms.ComboBox ddll_link_type;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.BindingSource tblcategoryBindingSource;
-        private System.Windows.Forms.Button button8;
     }
 }
