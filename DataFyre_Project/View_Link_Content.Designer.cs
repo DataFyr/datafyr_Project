@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Link_Content));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.view_content_textbox = new System.Windows.Forms.RichTextBox();
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.lstWordOccurrence = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.columnKeyword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnValue = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -56,6 +54,8 @@
             this.BtnLink = new System.Windows.Forms.Button();
             this.BtnSub = new System.Windows.Forms.Button();
             this.BtnCateogry = new System.Windows.Forms.Button();
+            this.columnKeyword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnValue = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -63,9 +63,11 @@
             // 
             // view_content_textbox
             // 
-            this.view_content_textbox.Location = new System.Drawing.Point(167, 70);
+            this.view_content_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.view_content_textbox.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_content_textbox.Location = new System.Drawing.Point(167, 87);
             this.view_content_textbox.Name = "view_content_textbox";
-            this.view_content_textbox.Size = new System.Drawing.Size(217, 434);
+            this.view_content_textbox.Size = new System.Drawing.Size(348, 434);
             this.view_content_textbox.TabIndex = 0;
             this.view_content_textbox.Text = "";
             this.view_content_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.view_content_textbox_MouseClick);
@@ -90,11 +92,11 @@
             this.bunifuButton3.ColorContrastOnClick = 45;
             this.bunifuButton3.ColorContrastOnHover = 45;
             this.bunifuButton3.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.bunifuButton3.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.bunifuButton3.CustomizableEdges = borderEdges3;
             this.bunifuButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton3.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton3.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -118,7 +120,7 @@
             this.bunifuButton3.IdleIconLeftImage = null;
             this.bunifuButton3.IdleIconRightImage = null;
             this.bunifuButton3.IndicateFocus = false;
-            this.bunifuButton3.Location = new System.Drawing.Point(173, 39);
+            this.bunifuButton3.Location = new System.Drawing.Point(173, 47);
             this.bunifuButton3.Name = "bunifuButton3";
             this.bunifuButton3.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton3.OnDisabledState.BorderRadius = 1;
@@ -163,47 +165,35 @@
             // 
             // lstWordOccurrence
             // 
-            this.lstWordOccurrence.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lstWordOccurrence.Font = new System.Drawing.Font("Microsoft Uighur", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstWordOccurrence.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstWordOccurrence.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstWordOccurrence.FormattingEnabled = true;
-            this.lstWordOccurrence.ItemHeight = 36;
-            this.lstWordOccurrence.Location = new System.Drawing.Point(388, 71);
+            this.lstWordOccurrence.ItemHeight = 18;
+            this.lstWordOccurrence.Location = new System.Drawing.Point(521, 87);
             this.lstWordOccurrence.Name = "lstWordOccurrence";
-            this.lstWordOccurrence.Size = new System.Drawing.Size(179, 434);
+            this.lstWordOccurrence.Size = new System.Drawing.Size(218, 432);
             this.lstWordOccurrence.TabIndex = 3;
             this.lstWordOccurrence.SelectedIndexChanged += new System.EventHandler(this.lstWordOccurrence_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnKeyword,
             this.columnValue});
-            this.dataGridView1.Location = new System.Drawing.Point(570, 71);
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(745, 87);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(245, 434);
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dataGridView1.Size = new System.Drawing.Size(321, 434);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // columnKeyword
-            // 
-            this.columnKeyword.DataPropertyName = "Value";
-            this.columnKeyword.HeaderText = "Keyword";
-            this.columnKeyword.Name = "columnKeyword";
-            // 
-            // columnValue
-            // 
-            this.columnValue.HeaderText = "Value";
-            this.columnValue.Items.AddRange(new object[] {
-            "-1 ",
-            "-2",
-            "-3",
-            "0",
-            "1",
-            "2",
-            "3"});
-            this.columnValue.Name = "columnValue";
-            this.columnValue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.columnValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel5
             // 
@@ -214,7 +204,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(829, 26);
+            this.panel5.Size = new System.Drawing.Size(1066, 26);
             this.panel5.TabIndex = 12;
             // 
             // label2
@@ -234,7 +224,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(780, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(1017, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(20, 20);
             this.btnMinimize.TabIndex = 4;
@@ -248,7 +238,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(807, 3);
+            this.btnClose.Location = new System.Drawing.Point(1044, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 20);
             this.btnClose.TabIndex = 3;
@@ -368,7 +358,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 26);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(167, 494);
+            this.panel6.Size = new System.Drawing.Size(167, 495);
             this.panel6.TabIndex = 43;
             // 
             // button1
@@ -491,12 +481,35 @@
             this.BtnCateogry.UseVisualStyleBackColor = false;
             this.BtnCateogry.Click += new System.EventHandler(this.BtnCateogry_Click);
             // 
+            // columnKeyword
+            // 
+            this.columnKeyword.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnKeyword.DataPropertyName = "Value";
+            this.columnKeyword.HeaderText = "Keyword";
+            this.columnKeyword.Name = "columnKeyword";
+            // 
+            // columnValue
+            // 
+            this.columnValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnValue.HeaderText = "Value";
+            this.columnValue.Items.AddRange(new object[] {
+            "+1",
+            "+2",
+            "+3",
+            "  0",
+            "-1 ",
+            "-2",
+            "-3"});
+            this.columnValue.Name = "columnValue";
+            this.columnValue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // View_Link_Content
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(829, 520);
+            this.ClientSize = new System.Drawing.Size(1066, 521);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.dashboardbtn);
             this.Controls.Add(this.btnLogout);
@@ -547,8 +560,8 @@
         private System.Windows.Forms.Button BtnLink;
         private System.Windows.Forms.Button BtnSub;
         private System.Windows.Forms.Button BtnCateogry;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnKeyword;
         private System.Windows.Forms.DataGridViewComboBoxColumn columnValue;
-        private System.Windows.Forms.Button button1;
     }
 }

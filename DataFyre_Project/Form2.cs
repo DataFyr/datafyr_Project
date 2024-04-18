@@ -91,35 +91,39 @@ namespace datascience_project
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             if (row != null)
             {
-                textbox_link_text.Text = row.Cells[1].Value.ToString();
-                textbox_sub_link_text.Text = row.Cells[2].Value.ToString();
-                textbox_link_content.Text = row.Cells[3].Value.ToString();
-                ddll_link_type.Text = row.Cells[4].Value.ToString();
-                ddl_sub_category_name.SelectedText = row.Cells[0].Value.ToString();
-                link_id = int.Parse(row.Cells[0].Value.ToString());
-                if (DateTime.TryParse(row.Cells[5].Value?.ToString(), out DateTime linkDate))
+                textbox_link_text.Text = row.Cells[2].Value.ToString();
+                textbox_sub_link_text.Text = row.Cells[3].Value.ToString();
+                textbox_link_content.Text = row.Cells[4].Value.ToString();
+                ddll_link_type.Text = row.Cells[5].Value.ToString();
+                ddl_sub_category_name.SelectedText = row.Cells[6].Value.ToString();
+                link_id = int.Parse(row.Cells[1].Value.ToString());
+                if (DateTime.TryParse(row.Cells[8].Value?.ToString(), out DateTime linkDate))
                 {
                     datetime.Value = linkDate;
                 }
 
-                // handle view content click
-                // Hide the current form
-                this.Hide();
 
-                // Create an instance of View_Link_Content form
-                View_Link_Content viewLinkContentForm = new View_Link_Content();
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Content")
+                {
 
-                // Set the text of view_content_textbox
-                viewLinkContentForm.view_content_textbox.Text = row.Cells[3].Value.ToString();
+                    if (MessageBox.Show("Are you sure want to see the contents of this link ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        View_Link_Content viewLinkContentForm = new View_Link_Content();
+                        viewLinkContentForm.view_content_textbox.Text = row.Cells[4].Value.ToString();
+                        viewLinkContentForm.ShowDialog();
 
-                // Show the View_Link_Content form as a dialog
-                viewLinkContentForm.ShowDialog();
-
-
-
-
+                    }
+                    else
+                    {
+                        this.Hide();
+                        new Form2().ShowDialog();
+                       
+                    }
+                }
+              
             }
         }
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {

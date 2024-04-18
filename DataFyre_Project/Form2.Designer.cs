@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.subcategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,7 +69,7 @@
             this.ddl_sub_category_name = new System.Windows.Forms.ComboBox();
             this.ddll_link_type = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Browse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Content = new System.Windows.Forms.DataGridViewButtonColumn();
             this.user_fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
@@ -195,7 +196,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Browse,
+            this.Content,
             this.user_fullname,
             this.date});
             this.dataGridView1.Location = new System.Drawing.Point(189, 367);
@@ -543,10 +544,24 @@
             this.label5.TabIndex = 47;
             this.label5.Text = "Link Type";
             // 
-            // Browse
+            // Content
             // 
-            this.Browse.HeaderText = "Content";
-            this.Browse.Name = "Browse";
+            this.Content.DataPropertyName = "Content";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Format = "Show Content";
+            dataGridViewCellStyle1.NullValue = "Show Content";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
+            this.Content.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Content.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Content.HeaderText = "Content";
+            this.Content.Name = "Content";
+            this.Content.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Content.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Content.Text = "Content";
             // 
             // user_fullname
             // 
@@ -647,7 +662,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.BindingSource tblcategoryBindingSource;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Browse;
+        private System.Windows.Forms.DataGridViewButtonColumn Content;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_fullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
     }
