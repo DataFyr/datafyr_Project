@@ -36,6 +36,8 @@ namespace datascience_project
             fillCategoryGrid();
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+            dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -224,8 +226,10 @@ namespace datascience_project
 
         private void button6_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             new View_Link_Content().ShowDialog();
+        
 
         }
     }

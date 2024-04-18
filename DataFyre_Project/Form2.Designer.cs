@@ -50,7 +50,6 @@
             this.datetime = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -92,31 +91,31 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(183, 54);
+            this.label1.Location = new System.Drawing.Point(183, 94);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Link Here";
+            this.label1.Text = "Link Text";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(183, 89);
+            this.label3.Location = new System.Drawing.Point(183, 129);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.Size = new System.Drawing.Size(105, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Sub Link";
+            this.label3.Text = "Sub Link Text";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(183, 124);
+            this.label4.Location = new System.Drawing.Point(183, 164);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 20);
@@ -126,31 +125,28 @@
             // textbox_link_text
             // 
             this.textbox_link_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_link_text.Location = new System.Drawing.Point(301, 47);
+            this.textbox_link_text.Location = new System.Drawing.Point(303, 87);
             this.textbox_link_text.Margin = new System.Windows.Forms.Padding(2);
-            this.textbox_link_text.Multiline = true;
             this.textbox_link_text.Name = "textbox_link_text";
-            this.textbox_link_text.Size = new System.Drawing.Size(500, 30);
+            this.textbox_link_text.Size = new System.Drawing.Size(689, 26);
             this.textbox_link_text.TabIndex = 12;
             // 
             // textbox_sub_link_text
             // 
             this.textbox_sub_link_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textbox_sub_link_text.Location = new System.Drawing.Point(301, 82);
+            this.textbox_sub_link_text.Location = new System.Drawing.Point(303, 122);
             this.textbox_sub_link_text.Margin = new System.Windows.Forms.Padding(2);
-            this.textbox_sub_link_text.Multiline = true;
             this.textbox_sub_link_text.Name = "textbox_sub_link_text";
-            this.textbox_sub_link_text.Size = new System.Drawing.Size(500, 30);
+            this.textbox_sub_link_text.Size = new System.Drawing.Size(689, 26);
             this.textbox_sub_link_text.TabIndex = 13;
             // 
             // textbox_link_content
             // 
             this.textbox_link_content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textbox_link_content.Location = new System.Drawing.Point(301, 117);
+            this.textbox_link_content.Location = new System.Drawing.Point(303, 157);
             this.textbox_link_content.Margin = new System.Windows.Forms.Padding(2);
-            this.textbox_link_content.Multiline = true;
             this.textbox_link_content.Name = "textbox_link_content";
-            this.textbox_link_content.Size = new System.Drawing.Size(500, 30);
+            this.textbox_link_content.Size = new System.Drawing.Size(689, 26);
             this.textbox_link_content.TabIndex = 14;
             // 
             // btnSave
@@ -158,7 +154,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(675, 251);
+            this.btnSave.Location = new System.Drawing.Point(873, 371);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(125, 40);
@@ -170,7 +166,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(548, 321);
+            this.btnUpdate.Location = new System.Drawing.Point(744, 445);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(125, 40);
@@ -183,7 +179,7 @@
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(677, 321);
+            this.btnDelete.Location = new System.Drawing.Point(873, 445);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(125, 40);
@@ -199,12 +195,13 @@
             this.Content,
             this.user_fullname,
             this.date});
-            this.dataGridView1.Location = new System.Drawing.Point(189, 367);
+            this.dataGridView1.Location = new System.Drawing.Point(188, 489);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(612, 142);
+            this.dataGridView1.Size = new System.Drawing.Size(810, 278);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -226,7 +223,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(189, 329);
+            this.button1.Location = new System.Drawing.Point(188, 451);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 25);
@@ -241,32 +238,32 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(183, 261);
+            this.label6.Location = new System.Drawing.Point(184, 372);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 20);
+            this.label6.Size = new System.Drawing.Size(101, 20);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Date";
+            this.label6.Text = "Current Date";
             // 
             // datetime
             // 
-            this.datetime.Location = new System.Drawing.Point(300, 259);
+            this.datetime.Location = new System.Drawing.Point(301, 371);
             this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(217, 20);
+            this.datetime.Size = new System.Drawing.Size(224, 20);
             this.datetime.TabIndex = 24;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.btnMaximize);
             this.panel5.Controls.Add(this.btnMinimize);
             this.panel5.Controls.Add(this.btnClose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(829, 26);
+            this.panel5.Size = new System.Drawing.Size(1021, 26);
             this.panel5.TabIndex = 41;
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
             // label7
             // 
@@ -275,24 +272,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 16);
+            this.label7.Size = new System.Drawing.Size(39, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Links";
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(781, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(20, 20);
-            this.btnMaximize.TabIndex = 5;
-            this.btnMaximize.Text = "▢";
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnMinimize
             // 
@@ -300,7 +282,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(755, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(972, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(20, 20);
             this.btnMinimize.TabIndex = 4;
@@ -314,7 +296,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(807, 3);
+            this.btnClose.Location = new System.Drawing.Point(999, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 20);
             this.btnClose.TabIndex = 3;
@@ -336,7 +318,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 26);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(167, 494);
+            this.panel6.Size = new System.Drawing.Size(167, 752);
             this.panel6.TabIndex = 42;
             // 
             // button8
@@ -367,6 +349,7 @@
             this.dashboardbtn.TabIndex = 37;
             this.dashboardbtn.Text = "Dashboard";
             this.dashboardbtn.UseVisualStyleBackColor = false;
+            this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
             // 
             // button7
             // 
@@ -376,7 +359,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(0, 447);
+            this.button7.Location = new System.Drawing.Point(0, 705);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(167, 47);
             this.button7.TabIndex = 36;
@@ -466,10 +449,10 @@
             this.ddl_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ddl_category.FormattingEnabled = true;
-            this.ddl_category.Location = new System.Drawing.Point(300, 152);
+            this.ddl_category.Location = new System.Drawing.Point(303, 192);
             this.ddl_category.Margin = new System.Windows.Forms.Padding(2);
             this.ddl_category.Name = "ddl_category";
-            this.ddl_category.Size = new System.Drawing.Size(500, 28);
+            this.ddl_category.Size = new System.Drawing.Size(689, 28);
             this.ddl_category.TabIndex = 46;
             this.ddl_category.ValueMember = "categoryid";
             this.ddl_category.SelectedIndexChanged += new System.EventHandler(this.ddl_category_SelectedIndexChanged);
@@ -483,7 +466,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(183, 155);
+            this.label8.Location = new System.Drawing.Point(183, 195);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 20);
@@ -495,7 +478,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(183, 188);
+            this.label2.Location = new System.Drawing.Point(183, 228);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 20);
@@ -509,10 +492,10 @@
             this.ddl_sub_category_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_sub_category_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ddl_sub_category_name.FormattingEnabled = true;
-            this.ddl_sub_category_name.Location = new System.Drawing.Point(301, 185);
+            this.ddl_sub_category_name.Location = new System.Drawing.Point(303, 225);
             this.ddl_sub_category_name.Margin = new System.Windows.Forms.Padding(2);
             this.ddl_sub_category_name.Name = "ddl_sub_category_name";
-            this.ddl_sub_category_name.Size = new System.Drawing.Size(500, 28);
+            this.ddl_sub_category_name.Size = new System.Drawing.Size(689, 28);
             this.ddl_sub_category_name.TabIndex = 49;
             this.ddl_sub_category_name.ValueMember = "subcategory_id";
             // 
@@ -526,10 +509,10 @@
             "LinkedIn",
             "Google",
             "Website"});
-            this.ddll_link_type.Location = new System.Drawing.Point(300, 217);
+            this.ddll_link_type.Location = new System.Drawing.Point(303, 258);
             this.ddll_link_type.Margin = new System.Windows.Forms.Padding(2);
             this.ddll_link_type.Name = "ddll_link_type";
-            this.ddll_link_type.Size = new System.Drawing.Size(500, 28);
+            this.ddll_link_type.Size = new System.Drawing.Size(689, 28);
             this.ddll_link_type.TabIndex = 48;
             // 
             // label5
@@ -537,7 +520,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(183, 220);
+            this.label5.Location = new System.Drawing.Point(183, 260);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 20);
@@ -574,12 +557,19 @@
             this.date.DataPropertyName = "date";
             this.date.HeaderText = "date";
             this.date.Name = "date";
+
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 520);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1021, 778);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textbox_link_published_date);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textbox_link_author);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ddl_sub_category_name);
             this.Controls.Add(this.ddll_link_type);
@@ -619,9 +609,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblcategoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -642,7 +630,6 @@
         private System.Windows.Forms.BindingSource linkBindingSource3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel6;
@@ -665,5 +652,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Content;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_fullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
+
     }
 }

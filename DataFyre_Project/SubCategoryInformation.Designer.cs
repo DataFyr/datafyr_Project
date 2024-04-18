@@ -46,7 +46,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.ddl_category_name = new System.Windows.Forms.ComboBox();
@@ -211,7 +210,6 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.btnMaximize);
             this.panel5.Controls.Add(this.btnMinimize);
             this.panel5.Controls.Add(this.btnClose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -228,24 +226,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 16);
+            this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Sub Category";
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(781, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(20, 20);
-            this.btnMaximize.TabIndex = 5;
-            this.btnMaximize.Text = "▢";
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnMinimize
             // 
@@ -253,7 +236,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(755, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(781, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(20, 20);
             this.btnMinimize.TabIndex = 4;
@@ -458,7 +441,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ComboBox ddl_category_name;

@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(view));
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btmShowData = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ComboBoxLinkType = new System.Windows.Forms.ComboBox();
             this.ComboBoxSubCategory = new System.Windows.Forms.ComboBox();
             this.subcategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,6 +61,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
@@ -81,7 +82,6 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.btnMaximize);
             this.panel5.Controls.Add(this.btnMinimize);
             this.panel5.Controls.Add(this.btnClose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -102,28 +102,13 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "View";
             // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(781, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(20, 20);
-            this.btnMaximize.TabIndex = 5;
-            this.btnMaximize.Text = "▢";
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
             // btnMinimize
             // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(755, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(781, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(20, 20);
             this.btnMinimize.TabIndex = 4;
@@ -149,7 +134,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(175, 107);
+            this.label4.Location = new System.Drawing.Point(179, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 19);
             this.label4.TabIndex = 63;
@@ -159,7 +144,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(179, 149);
+            this.label3.Location = new System.Drawing.Point(179, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 19);
             this.label3.TabIndex = 62;
@@ -169,7 +154,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 63);
+            this.label1.Location = new System.Drawing.Point(179, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 19);
             this.label1.TabIndex = 61;
@@ -184,7 +169,7 @@
             this.btmShowData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btmShowData.Font = new System.Drawing.Font("Roboto", 12F);
             this.btmShowData.ForeColor = System.Drawing.Color.White;
-            this.btmShowData.Location = new System.Drawing.Point(693, 190);
+            this.btmShowData.Location = new System.Drawing.Point(693, 208);
             this.btmShowData.Name = "btmShowData";
             this.btmShowData.Size = new System.Drawing.Size(97, 27);
             this.btmShowData.TabIndex = 60;
@@ -192,30 +177,12 @@
             this.btmShowData.UseVisualStyleBackColor = false;
             this.btmShowData.Click += new System.EventHandler(this.btmShowData_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(180, 29);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(291, 27);
-            this.textBox1.TabIndex = 59;
-            this.textBox1.Text = "Please Select From Options Given Below";
-            // 
             // ComboBoxLinkType
             // 
             this.ComboBoxLinkType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxLinkType.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxLinkType.FormattingEnabled = true;
-            this.ComboBoxLinkType.Location = new System.Drawing.Point(333, 147);
+            this.ComboBoxLinkType.Location = new System.Drawing.Point(336, 173);
             this.ComboBoxLinkType.Name = "ComboBoxLinkType";
             this.ComboBoxLinkType.Size = new System.Drawing.Size(457, 27);
             this.ComboBoxLinkType.TabIndex = 58;
@@ -227,7 +194,7 @@
             this.ComboBoxSubCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxSubCategory.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxSubCategory.FormattingEnabled = true;
-            this.ComboBoxSubCategory.Location = new System.Drawing.Point(332, 104);
+            this.ComboBoxSubCategory.Location = new System.Drawing.Point(335, 130);
             this.ComboBoxSubCategory.Name = "ComboBoxSubCategory";
             this.ComboBoxSubCategory.Size = new System.Drawing.Size(458, 27);
             this.ComboBoxSubCategory.TabIndex = 57;
@@ -244,7 +211,7 @@
             this.ComboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxCategory.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxCategory.FormattingEnabled = true;
-            this.ComboBoxCategory.Location = new System.Drawing.Point(332, 60);
+            this.ComboBoxCategory.Location = new System.Drawing.Point(336, 82);
             this.ComboBoxCategory.Name = "ComboBoxCategory";
             this.ComboBoxCategory.Size = new System.Drawing.Size(458, 27);
             this.ComboBoxCategory.TabIndex = 56;
@@ -272,30 +239,30 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(183, 235);
+            this.dataGridView1.Location = new System.Drawing.Point(183, 253);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 100;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.AntiqueWhite;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.AntiqueWhite;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(607, 242);
             this.dataGridView1.TabIndex = 64;
@@ -422,6 +389,22 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(179, 32);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(375, 25);
+            this.bunifuLabel1.TabIndex = 66;
+            this.bunifuLabel1.Text = "Please Select From Options Given Below";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
@@ -441,14 +424,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(829, 520);
+            this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btmShowData);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ComboBoxLinkType);
             this.Controls.Add(this.ComboBoxSubCategory);
             this.Controls.Add(this.ComboBoxCategory);
@@ -480,14 +464,12 @@
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btmShowData;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox ComboBoxLinkType;
         private System.Windows.Forms.ComboBox ComboBoxSubCategory;
         private System.Windows.Forms.ComboBox ComboBoxCategory;
@@ -509,6 +491,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private System.Windows.Forms.Button button1;
     }
 }

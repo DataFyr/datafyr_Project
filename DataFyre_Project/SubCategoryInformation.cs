@@ -81,6 +81,7 @@ namespace datascience_project
             btnUpdate.Enabled = false;
             fillCategoryCombo();
             fillSubCategoryGrid();
+            dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -123,13 +124,20 @@ namespace datascience_project
             btnDelete.Enabled = true;
             btnSave.Enabled = false;
 
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            if (row != null)
+            if (e.RowIndex > 0)
             {
-                textbox_sub_categoryname.Text = row.Cells[1].Value.ToString();
-                ddl_category_name.SelectedValue = int.Parse(row.Cells[2].Value.ToString());
-                sub_category_id = int.Parse(row.Cells[0].Value.ToString());
+
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                if (row != null)
+                {
+                    textbox_sub_categoryname.Text = row.Cells[1].Value.ToString();
+                    ddl_category_name.SelectedValue = int.Parse(row.Cells[2].Value.ToString());
+                    sub_category_id = int.Parse(row.Cells[0].Value.ToString());
+                }
             }
+            
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -218,7 +226,7 @@ namespace datascience_project
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            //Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void panel5_MouseDown(object sender, MouseEventArgs e)

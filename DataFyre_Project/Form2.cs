@@ -28,7 +28,8 @@ namespace datascience_project
 
         public void showInformation()
         {
-
+            fillLinkGrid();
+            fillCategoryCombo();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -39,13 +40,13 @@ namespace datascience_project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ddl_sub_category_name.Text != "" || ddll_link_type.Text != "" || textbox_link_text.Text != "" || textbox_sub_link_text.Text != "" || textbox_link_content.Text !="")
+            if (ddl_sub_category_name.Text != "" || ddll_link_type.Text != "" || textbox_link_text.Text != "" || textbox_sub_link_text.Text != "" || textbox_link_content.Text !="" || textbox_link_author.Text != "" || textbox_link_published_date.Text != "")
             {
                 try
                 {
                     SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO link VALUES (@link_text,@sub_link_text,@link_content,@link_type,@sub_category_id,@user_fullname,@date)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO link VALUES (@link_text,@sub_link_text,@link_content,@link_type,@sub_category_id,@user_fullname,@date,@author,@published_date)", con);
                     cmd.Parameters.AddWithValue("@link_text", textbox_link_text.Text);
                     cmd.Parameters.AddWithValue("@sub_link_text", textbox_sub_link_text.Text);
                     cmd.Parameters.AddWithValue("@link_content", textbox_link_content.Text);
@@ -53,6 +54,8 @@ namespace datascience_project
                     cmd.Parameters.AddWithValue("@sub_category_id", ddl_sub_category_name.SelectedValue);
                     cmd.Parameters.AddWithValue("@user_fullname", LoginPage.fullname);
                     cmd.Parameters.AddWithValue("@date", datetime.Value);
+                    cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
+                    cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
                     cmd.ExecuteNonQuery();
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
@@ -80,6 +83,8 @@ namespace datascience_project
             textbox_sub_link_text.Clear();
             ddl_sub_category_name.SelectedIndex = 0;
             ddll_link_type.SelectedIndex = 0;
+            textbox_link_author.Clear();
+            textbox_link_published_date.Clear();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,7 +106,6 @@ namespace datascience_project
                 {
                     datetime.Value = linkDate;
                 }
-
 
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Content")
                 {
@@ -129,11 +133,12 @@ namespace datascience_project
         {
             if (ddl_sub_category_name.Text != "" || ddll_link_type.Text != "" || textbox_link_text.Text != "" || textbox_sub_link_text.Text != "" || textbox_link_content.Text != "")
             {
+                var popup = "Are You Sure You Want To Update";
                 try
                 {
                     SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("update link set link_text = @link_text,sub_link_text = @sub_link_text,link_content = @link_content,link_type = @link_type,sub_category_id = @sub_category_id,@fullname=fullname,date=@date where link_id = @link_id", con);
+                    SqlCommand cmd = new SqlCommand("update link set link_text = @link_text,sub_link_text = @sub_link_text,link_content = @link_content,link_type = @link_type,sub_category_id = @sub_category_id,user_fullname=@fullname,date=@date where link_id = @link_id", con);
                     cmd.Parameters.AddWithValue("@link_text", textbox_link_text.Text);
                     cmd.Parameters.AddWithValue("@sub_link_text", textbox_sub_link_text.Text);
                     cmd.Parameters.AddWithValue("@link_content", textbox_link_content.Text);
@@ -143,10 +148,10 @@ namespace datascience_project
                     cmd.Parameters.AddWithValue("@fullname", LoginPage.fullname);
                     cmd.Parameters.AddWithValue("@date", datetime.Value);
                     cmd.ExecuteNonQuery();
+                    
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
-                    MessageBox.Show("link information updated successfully.");
                     showInformation();
                     clearFields();
                 }
@@ -166,16 +171,16 @@ namespace datascience_project
         {
                 try
                 {
+                var popup = "Are You Sure You Want To Delete";
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
                     SqlCommand cmd = new SqlCommand("delete link where link_id = @link_id ", con);
                     cmd.Parameters.AddWithValue("@link_id", link_id);
-                    cmd.ExecuteNonQuery();
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
-                    MessageBox.Show("link information deleted successfully.");
-                    showInformation();
+                    cmd.ExecuteNonQuery();
+                showInformation();
                     clearFields();
                 }
                 catch (Exception ee)
@@ -359,11 +364,11 @@ namespace datascience_project
                 MessageBox.Show(ee.Message);
             }
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
             this.Hide();
             new View_Link_Content().ShowDialog();
+
         }
     }
 }
