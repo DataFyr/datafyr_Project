@@ -105,20 +105,17 @@ namespace datascience_project
 
         private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form1().ShowDialog();
+            new Form1().Show();
         }
 
         private void subCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new SubCategoryInformation().ShowDialog();
+            new SubCategoryInformation().Show();
         }
 
         private void linkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form2().ShowDialog();
+            new Form2().Show();
         }
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,26 +126,24 @@ namespace datascience_project
             }
             else
             {
-                this.Hide();
-                new user_management().ShowDialog();
+                new user_management().Show();
             }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LoginPage().ShowDialog();
+            new LoginPage().Show();
         }
 
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new view().ShowDialog(); 
+            new view().Show(); 
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.ExitThread();
+            Application.Exit();
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -174,6 +169,11 @@ namespace datascience_project
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void dashboardbtn_Click(object sender, EventArgs e)
+        {
+            new Form3().Show();
         }
     }
 }

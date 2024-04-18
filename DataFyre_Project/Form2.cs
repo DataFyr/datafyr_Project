@@ -36,10 +36,14 @@ namespace datascience_project
         {
             fillLinkGrid();
             fillCategoryCombo();
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnSave.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            String msg = "              Saved Successfully";
             if (ddl_sub_category_name.Text != "" || ddll_link_type.Text != "" || textbox_link_text.Text != "" || textbox_sub_link_text.Text != "" || textbox_link_content.Text !="" || textbox_link_author.Text != "" || textbox_link_published_date.Text != "")
             {
                 try
@@ -60,7 +64,7 @@ namespace datascience_project
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
-                    MessageBox.Show("link information added successfully.");
+                    new popup(msg).ShowDialog();
                     showInformation();
                     clearFields();
                 }
@@ -93,36 +97,33 @@ namespace datascience_project
             btnDelete.Enabled = true;
             btnSave.Enabled = false;
 
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            if (row != null)
+
+            if (e.RowIndex > 0)
             {
-                textbox_link_text.Text = row.Cells[1].Value.ToString();
-                textbox_sub_link_text.Text = row.Cells[2].Value.ToString();
-                textbox_link_content.Text = row.Cells[3].Value.ToString();
-                ddll_link_type.Text = row.Cells[4].Value.ToString();
-                ddl_sub_category_name.SelectedText = row.Cells[0].Value.ToString();
-                link_id = int.Parse(row.Cells[0].Value.ToString());
-                textbox_link_author.Text = row.Cells[8].Value.ToString();
-                textbox_link_published_date.Text = row.Cells[9].Value.ToString();
-                if (DateTime.TryParse(row.Cells[5].Value?.ToString(), out DateTime linkDate))
-                {
-                    datetime.Value = linkDate;
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                if (row != null) {
+                    
+                    textbox_link_text.Text = row.Cells[1].Value.ToString();
+                    textbox_sub_link_text.Text = row.Cells[2].Value.ToString();
+                    textbox_link_content.Text = row.Cells[3].Value.ToString();
+                    ddll_link_type.Text = row.Cells[4].Value.ToString();
+                    ddl_sub_category_name.SelectedText = row.Cells[0].Value.ToString();
+                    link_id = int.Parse(row.Cells[0].Value.ToString());
+                    textbox_link_author.Text = row.Cells[8].Value.ToString();
+                    textbox_link_published_date.Text = row.Cells[9].Value.ToString();
+                    if (DateTime.TryParse(row.Cells[5].Value?.ToString(), out DateTime linkDate))
+                    {
+                        datetime.Value = linkDate;
+                    }
+                    if (link_id < 0 || link_id == 0)
+                    {
+                        String msg = "Empty Cell";
+                        new popup(msg).ShowDialog();
+                    }
+
                 }
-
-                // handle view content click
-                // Hide the current form
-                //this.Hide();
-
-                //// Create an instance of View_Link_Content form
-                //View_Link_Content viewLinkContentForm = new View_Link_Content();
-
-                //// Set the text of view_content_textbox
-                //viewLinkContentForm.view_content_textbox.Text = row.Cells[3].Value.ToString();
-
-                //// Show the View_Link_Content form as a dialog
-                //viewLinkContentForm.ShowDialog();
-
-
 
 
             }
@@ -137,16 +138,18 @@ namespace datascience_project
                 {
                     SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("update link set link_text = @link_text,sub_link_text = @sub_link_text,link_content = @link_content,link_type = @link_type,sub_category_id = @sub_category_id,user_fullname=@fullname,date=@date where link_id = @link_id", con);
+                    SqlCommand cmd = new SqlCommand("update link set link_text = @link_text,sub_link_text = @sub_link_text,link_content = @link_content,link_type = @link_type,sub_category_id = @sub_category_id,user_fullname=@user_fullname,date=@date,author=@author,published_date = @published_date where link_id = @link_id", con);
                     cmd.Parameters.AddWithValue("@link_text", textbox_link_text.Text);
                     cmd.Parameters.AddWithValue("@sub_link_text", textbox_sub_link_text.Text);
                     cmd.Parameters.AddWithValue("@link_content", textbox_link_content.Text);
                     cmd.Parameters.AddWithValue("@link_type", ddll_link_type.Text);
                     cmd.Parameters.AddWithValue("@sub_category_id", ddl_sub_category_name.SelectedValue);
                     cmd.Parameters.AddWithValue("@link_id", link_id);
-                    cmd.Parameters.AddWithValue("@fullname", LoginPage.fullname);
+                    cmd.Parameters.AddWithValue("@user_fullname", LoginPage.fullname);
                     cmd.Parameters.AddWithValue("@date", datetime.Value);
-                    new popup(popup, cmd).ShowDialog();
+                    cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
+                    cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
+                    new popup(popup, cmd,"update").ShowDialog();
                     
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
@@ -178,7 +181,7 @@ namespace datascience_project
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
-                    new popup(popup, cmd).ShowDialog();
+                    new popup(popup, cmd,"delete").ShowDialog();
                     showInformation();
                     clearFields();
                 }
@@ -191,20 +194,17 @@ namespace datascience_project
 
         private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form1().ShowDialog();
+            new Form1().Show();
         }
 
         private void subCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new SubCategoryInformation().ShowDialog();
+            new SubCategoryInformation().Show();
         }
 
         private void linkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form2().ShowDialog();
+            new Form2().Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -256,15 +256,14 @@ namespace datascience_project
             }
             else
             {
-                this.Hide();
-                new user_management().ShowDialog();
+                new user_management().Show();
             }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LoginPage().ShowDialog();
+            new LoginPage().Show();
         }
 
         private void button1_Click_2(object sender, EventArgs e)
@@ -316,13 +315,12 @@ namespace datascience_project
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new view().ShowDialog();
+            new view().Show();
         }
 
         public void fillLinkGrid()
@@ -366,8 +364,8 @@ namespace datascience_project
 
         private void dashboardbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form3().ShowDialog();
+            
+            new Form3().Show();
         }
 
         private void panel5_MouseDown(object sender, MouseEventArgs e)

@@ -191,11 +191,7 @@ namespace datascience_project
             Application.Exit();
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-
-        }
-
+    
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
