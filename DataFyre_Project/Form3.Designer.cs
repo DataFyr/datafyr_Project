@@ -139,7 +139,7 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Location = new System.Drawing.Point(3, 238);
+            this.btnUsers.Location = new System.Drawing.Point(0, 304);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(164, 60);
             this.btnUsers.TabIndex = 33;
@@ -444,13 +444,13 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 283);
+            this.button1.Location = new System.Drawing.Point(3, 238);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 47);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Import";
+            this.button1.Size = new System.Drawing.Size(164, 60);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Link Contents";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

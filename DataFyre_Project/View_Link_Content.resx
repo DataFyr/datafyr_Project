@@ -120,13 +120,18 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bunifuButton3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGwAAAAbCAYAAACZQWq0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACLSURBVGhD7dWxDYAwDETRLEJWDiMwChuwEQanSpEB/KVf
-        PCkW5Ym71s+IY8Sd8u1d+56BiaOtSaq2zMrAQGZguw+qy8BgrEQQNwzGDQMyMBgrEcQNg3HDgAwMxkoE
-        ccNg3DAgA4OxEkHcMBg3DMjAYKxEEDcMxg0DMjCYP7D3yUf+bms9ete7+4jrA7lZTx85LDKjAAAAAElF
-        TkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAGUAAAAZCAYAAAAonOB1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVGhD7dqxDYQwEAVRu1ssYWpyKXQG9kZYIt8JJnjS
+        LRd+MRGltj5qu55wnHfwzrvnHmV7KIT5pvz/oTyOQjPLZb5oHIXJfAE5Co35AnIUJvMF5Cg05gvIUZjM
+        F5Cj0JgvIEdhMl9AjkJjvoAchcl8ATkKTeRrfff1Tdj67Z13tz5epEYGOppL3nUAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="columnKeyword.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="columnValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="columnKeyword.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
