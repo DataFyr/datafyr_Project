@@ -228,5 +228,10 @@ namespace datascience_project
             this.Hide();
             new view().ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new import().ShowDialog();
+        }
     }
 }

@@ -56,6 +56,7 @@
             this.textbox_sub_categoryname = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcategoryBindingSource)).BeginInit();
             this.panel6.SuspendLayout();
@@ -85,6 +86,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.panel6.Controls.Add(this.button6);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.button7);
             this.panel6.Controls.Add(this.button5);
@@ -224,7 +226,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 16);
+            this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Sub Category";
             // 
@@ -377,6 +379,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(0, 301);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(164, 47);
+            this.button6.TabIndex = 39;
+            this.button6.Text = "Import";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // SubCategoryInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,5 +452,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button dashboardbtn;
+        private System.Windows.Forms.Button button6;
     }
 }
