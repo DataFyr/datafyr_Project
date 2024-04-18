@@ -282,5 +282,9 @@ namespace datascience_project
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new import().ShowDialog();
+        }
     }
 }

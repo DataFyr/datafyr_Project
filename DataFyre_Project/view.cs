@@ -207,6 +207,11 @@ namespace datascience_project
             this.Hide();
             new LoginPage().ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new import().ShowDialog();
+        }
     }
 }
 

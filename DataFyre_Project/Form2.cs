@@ -146,7 +146,7 @@ namespace datascience_project
                     cmd.Parameters.AddWithValue("@link_id", link_id);
                     cmd.Parameters.AddWithValue("@fullname", LoginPage.fullname);
                     cmd.Parameters.AddWithValue("@date", datetime.Value);
-                    new popup(popup, cmd).ShowDialog();
+                    cmd.ExecuteNonQuery();
                     
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
@@ -178,8 +178,8 @@ namespace datascience_project
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
-                    new popup(popup, cmd).ShowDialog();
-                    showInformation();
+                    cmd.ExecuteNonQuery();
+                showInformation();
                     clearFields();
                 }
                 catch (Exception ee)
@@ -374,6 +374,11 @@ namespace datascience_project
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new import().ShowDialog();
         }
     }
 }

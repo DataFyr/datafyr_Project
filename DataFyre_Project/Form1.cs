@@ -223,5 +223,10 @@ namespace datascience_project
                 MessageBox.Show(ee.Message);
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new import().ShowDialog();
+        }
     }
 }
