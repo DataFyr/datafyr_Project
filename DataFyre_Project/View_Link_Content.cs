@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Speech.Synthesis;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace datascience_project
 {
@@ -17,7 +18,7 @@ namespace datascience_project
     {
         HashSet<string> selectedSentencesAdded = new HashSet<string>();
 
-        Color[] highlightColors = {Color.Yellow,Color.Cyan,Color.Magenta,Color.Orange,Color.LightBlue,Color.LightGreen,Color.LightPink,Color.LightSalmon,Color.LightSeaGreen,Color.LightSkyBlue,Color.LightSteelBlue,Color.LightYellow};
+        Color[] highlightColors = { Color.Yellow, Color.Cyan, Color.Magenta, Color.Orange, Color.LightBlue, Color.LightGreen, Color.LightPink, Color.LightSalmon, Color.LightSeaGreen, Color.LightSkyBlue, Color.LightSteelBlue, Color.LightYellow };
         SpeechSynthesizer synthesizer;
         private static readonly HashSet<string> StopWords = new HashSet<string>
         {
@@ -157,10 +158,7 @@ namespace datascience_project
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
         private bool IsSentenceHighlighted(int startIndex, int length)
         {
             // Get the selection start and length
@@ -177,9 +175,7 @@ namespace datascience_project
             return false;
         }
 
-        private void view_content_textbox_TextChanged(object sender, EventArgs e)
-        {
-        }
+       
         private string GetClickedSentence()
         {
             // Get the index of the clicked character in the TextBox
@@ -221,5 +217,72 @@ namespace datascience_project
                 dataGridView1.Rows.Add(selectedText);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.ExitThread();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnDashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form3().ShowDialog();
+        }
+
+        private void BtnCateogry_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form1().ShowDialog();
+        }
+
+        private void BtnSub_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form3().ShowDialog();
+        }
+
+        private void BtnLink_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form2().ShowDialog();
+        }
+
+        private void BtnViewTab_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new view().ShowDialog();
+        }
+
+        private void BtnUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new user_management().ShowDialog();
+        }
+
+        private void BtnLogingOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new LoginPage().ShowDialog();
+        }
+
+        private void bunifuDropdown2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new View_Link_Content().ShowDialog();
+
+        }
+
+     
+
+   
     }
 }

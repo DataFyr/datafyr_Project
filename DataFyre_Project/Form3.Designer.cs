@@ -57,6 +57,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_total_category = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,6 +73,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.btnLogout);
             this.panel6.Controls.Add(this.btnView);
@@ -138,7 +140,7 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Location = new System.Drawing.Point(3, 238);
+            this.btnUsers.Location = new System.Drawing.Point(0, 304);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(164, 60);
             this.btnUsers.TabIndex = 33;
@@ -438,6 +440,21 @@
             this.label_total_category.Size = new System.Drawing.Size(0, 26);
             this.label_total_category.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(3, 238);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 60);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Link Contents";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,5 +521,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_total_category;
         private System.Windows.Forms.Button dashboardbtn;
+        private System.Windows.Forms.Button button1;
     }
 }

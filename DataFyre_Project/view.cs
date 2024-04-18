@@ -147,11 +147,6 @@ namespace datascience_project
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
-
         private void btmShowData_Click(object sender, EventArgs e)
         {
             try
@@ -164,15 +159,18 @@ namespace datascience_project
                 DataTable dt = new DataTable();
                 cmd.Fill(dt);
                 if (dt.Rows.Count > 0)
+
                 {
                     dataGridView1.DataSource = dt;
                 }
                 else
                 {
+
                     String text = "               No Data Available";
                     new popup(text).ShowDialog();
                     
                 }
+
             }
             catch (Exception ee)
             {
@@ -216,6 +214,12 @@ namespace datascience_project
         private void button5_Click(object sender, EventArgs e)
         {
             new view().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new View_Link_Content().ShowDialog();
         }
     }
 }

@@ -105,12 +105,12 @@ namespace datascience_project
 
                 if (row != null) {
                     
-                    textbox_link_text.Text = row.Cells[1].Value.ToString();
-                    textbox_sub_link_text.Text = row.Cells[2].Value.ToString();
-                    textbox_link_content.Text = row.Cells[3].Value.ToString();
-                    ddll_link_type.Text = row.Cells[4].Value.ToString();
-                    ddl_sub_category_name.SelectedText = row.Cells[0].Value.ToString();
-                    link_id = int.Parse(row.Cells[0].Value.ToString());
+                textbox_link_text.Text = row.Cells[2].Value.ToString();
+                textbox_sub_link_text.Text = row.Cells[3].Value.ToString();
+                textbox_link_content.Text = row.Cells[4].Value.ToString();
+                ddll_link_type.Text = row.Cells[5].Value.ToString();
+                ddl_sub_category_name.SelectedText = row.Cells[6].Value.ToString();
+                link_id = int.Parse(row.Cells[1].Value.ToString());
                     textbox_link_author.Text = row.Cells[8].Value.ToString();
                     textbox_link_published_date.Text = row.Cells[9].Value.ToString();
                     if (DateTime.TryParse(row.Cells[5].Value?.ToString(), out DateTime linkDate))
@@ -125,9 +125,28 @@ namespace datascience_project
 
                 }
 
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Content")
+                {
 
+
+                    if (MessageBox.Show("Are you sure want to see the contents of this link ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        View_Link_Content viewLinkContentForm = new View_Link_Content();
+                        viewLinkContentForm.view_content_textbox.Text = row.Cells[4].Value.ToString();
+                        viewLinkContentForm.ShowDialog();
+
+                    }
+                    else
+                    {
+                        this.Hide();
+                        new Form2().ShowDialog();
+                       
+                    }
+                }
+              
             }
         }
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -147,6 +166,7 @@ namespace datascience_project
                     cmd.Parameters.AddWithValue("@link_id", link_id);
                     cmd.Parameters.AddWithValue("@user_fullname", LoginPage.fullname);
                     cmd.Parameters.AddWithValue("@date", datetime.Value);
+
                     cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
                     cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
                     new popup(popup, cmd,"update").ShowDialog();
@@ -183,6 +203,7 @@ namespace datascience_project
                     btnSave.Enabled = true;
                     new popup(popup, cmd,"delete").ShowDialog();
                     showInformation();
+
                     clearFields();
                 }
                 catch (Exception ee)
@@ -361,17 +382,11 @@ namespace datascience_project
                 MessageBox.Show(ee.Message);
             }
         }
-
-        private void dashboardbtn_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
             
-            new Form3().Show();
+            new View_Link_Content().Show();
         }
 
-        private void panel5_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
     }
 }

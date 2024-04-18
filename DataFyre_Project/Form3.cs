@@ -162,13 +162,10 @@ namespace datascience_project
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-       
-
-        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            this.Hide();
+            new View_Link_Content().ShowDialog();
         }
 
         private void dashboardbtn_Click(object sender, EventArgs e)
