@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(popup));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            //Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            //Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            //Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.yesBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -87,11 +87,11 @@
             this.yesBtn.ColorContrastOnClick = 45;
             this.yesBtn.ColorContrastOnHover = 45;
             this.yesBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.yesBtn.CustomizableEdges = borderEdges1;
+            //borderEdges1.BottomLeft = true;
+            //borderEdges1.BottomRight = true;
+            //borderEdges1.TopLeft = true;
+            //borderEdges1.TopRight = true;
+            //this.yesBtn.CustomizableEdges = borderEdges1;
             this.yesBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.yesBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.yesBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -187,11 +187,11 @@
             this.NoBtn.ColorContrastOnClick = 45;
             this.NoBtn.ColorContrastOnHover = 45;
             this.NoBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.NoBtn.CustomizableEdges = borderEdges2;
+            //borderEdges2.BottomLeft = true;
+            //borderEdges2.BottomRight = true;
+            //borderEdges2.TopLeft = true;
+            //borderEdges2.TopRight = true;
+            //this.NoBtn.CustomizableEdges = borderEdges2;
             this.NoBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.NoBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.NoBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -277,11 +277,11 @@
             this.btnOk.ColorContrastOnClick = 45;
             this.btnOk.ColorContrastOnHover = 45;
             this.btnOk.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnOk.CustomizableEdges = borderEdges3;
+            //borderEdges3.BottomLeft = true;
+            //borderEdges3.BottomRight = true;
+            //borderEdges3.TopLeft = true;
+            //borderEdges3.TopRight = true;
+            //this.btnOk.CustomizableEdges = borderEdges3;
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnOk.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnOk.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
