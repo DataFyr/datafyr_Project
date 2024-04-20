@@ -65,7 +65,7 @@ namespace datascience_project
                     Marshal.ReleaseComObject(excelWorkbook);
                     excelApp.Quit();
                     Marshal.ReleaseComObject(excelApp);
-                    //filepath.Text = openFileDialog1.FileName;
+                    filepath.Text = openFileDialog1.FileName;
                     bunifuButton2.Visible = true;
                 }
                 catch (Exception ex)
@@ -73,7 +73,7 @@ namespace datascience_project
                     MessageBox.Show(ex.Message);
                 }
             }
-            }
+        }
 
         private void dashboardbtn_Click(object sender, EventArgs e)
         {

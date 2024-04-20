@@ -41,6 +41,9 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Content = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.user_fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.linkBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.linkBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -68,9 +71,10 @@
             this.ddl_sub_category_name = new System.Windows.Forms.ComboBox();
             this.ddll_link_type = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Content = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.user_fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textbox_link_published_date = new System.Windows.Forms.TextBox();
+            this.textbox_link_author = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.subcategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.linkBindingSource3)).BeginInit();
@@ -208,6 +212,26 @@
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Content
+            // 
+            this.Content.DataPropertyName = "Content";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Format = "Show Content";
+            dataGridViewCellStyle1.NullValue = "Show Content";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
+            this.Content.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Content.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Content.HeaderText = "Content";
+            this.Content.Name = "Content";
+            this.Content.ReadOnly = true;
+            this.Content.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Content.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Content.Text = "Content";
+            // 
             // user_fullname
             // 
             this.user_fullname.DataPropertyName = "user_fullname";
@@ -221,7 +245,7 @@
             this.date.HeaderText = "date";
             this.date.Name = "date";
             this.date.ReadOnly = true;
-
+            // 
             // linkBindingSource3
             // 
             this.linkBindingSource3.DataMember = "link";
@@ -279,6 +303,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1021, 26);
             this.panel5.TabIndex = 41;
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
             // label7
             // 
@@ -287,7 +312,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 16);
+            this.label7.Size = new System.Drawing.Size(38, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Links";
             // 
@@ -341,7 +366,7 @@
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Location = new System.Drawing.Point(3, 235);
             this.button8.Name = "button8";
@@ -541,37 +566,47 @@
             this.label5.TabIndex = 47;
             this.label5.Text = "Link Type";
             // 
-            // Content
+            // textbox_link_published_date
             // 
-            this.Content.DataPropertyName = "Content";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Format = "Show Content";
-            dataGridViewCellStyle1.NullValue = "Show Content";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
-            this.Content.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Content.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Content.HeaderText = "Content";
-            this.Content.Name = "Content";
-            this.Content.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Content.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Content.Text = "Content";
+            this.textbox_link_published_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textbox_link_published_date.Location = new System.Drawing.Point(301, 330);
+            this.textbox_link_published_date.Margin = new System.Windows.Forms.Padding(2);
+            this.textbox_link_published_date.Name = "textbox_link_published_date";
+            this.textbox_link_published_date.Size = new System.Drawing.Size(689, 26);
+            this.textbox_link_published_date.TabIndex = 54;
             // 
-            // user_fullname
+            // textbox_link_author
             // 
-            this.user_fullname.DataPropertyName = "user_fullname";
-            this.user_fullname.HeaderText = "user_fullname";
-            this.user_fullname.Name = "user_fullname";
+            this.textbox_link_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textbox_link_author.Location = new System.Drawing.Point(301, 295);
+            this.textbox_link_author.Margin = new System.Windows.Forms.Padding(2);
+            this.textbox_link_author.Name = "textbox_link_author";
+            this.textbox_link_author.Size = new System.Drawing.Size(689, 26);
+            this.textbox_link_author.TabIndex = 53;
             // 
-            // date
+            // label9
             // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "date";
-            this.date.Name = "date";
-
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(172, 333);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(117, 20);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Published Date";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(181, 302);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 20);
+            this.label10.TabIndex = 51;
+            this.label10.Text = "Link Author";
             // 
             // Form2
             // 
@@ -579,6 +614,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1021, 778);
+            this.Controls.Add(this.textbox_link_published_date);
+            this.Controls.Add(this.textbox_link_author);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ddl_sub_category_name);
             this.Controls.Add(this.ddll_link_type);
@@ -618,6 +657,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblcategoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         private System.Windows.Forms.Label label3;
@@ -661,6 +701,9 @@
         private System.Windows.Forms.DataGridViewButtonColumn Content;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_fullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-
+        private System.Windows.Forms.TextBox textbox_link_published_date;
+        private System.Windows.Forms.TextBox textbox_link_author;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

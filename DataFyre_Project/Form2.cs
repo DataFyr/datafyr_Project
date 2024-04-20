@@ -58,8 +58,8 @@ namespace datascience_project
                     cmd.Parameters.AddWithValue("@sub_category_id", ddl_sub_category_name.SelectedValue);
                     cmd.Parameters.AddWithValue("@user_fullname", LoginPage.fullname);
                     cmd.Parameters.AddWithValue("@date", datetime.Value);
-                    //cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
-                    //cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
+                    cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
+                    cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
                     cmd.ExecuteNonQuery();
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
@@ -87,8 +87,8 @@ namespace datascience_project
             textbox_sub_link_text.Clear();
             ddl_sub_category_name.SelectedIndex = 0;
             ddll_link_type.SelectedIndex = 0;
-            //textbox_link_author.Clear();
-            //textbox_link_published_date.Clear();
+            textbox_link_author.Clear();
+            textbox_link_published_date.Clear();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -111,8 +111,8 @@ namespace datascience_project
                 ddll_link_type.Text = row.Cells[5].Value.ToString();
                 ddl_sub_category_name.SelectedText = row.Cells[6].Value.ToString();
                 link_id = int.Parse(row.Cells[1].Value.ToString());
-                    //textbox_link_author.Text = row.Cells[8].Value.ToString();
-                    //textbox_link_published_date.Text = row.Cells[9].Value.ToString();
+                    textbox_link_author.Text = row.Cells[8].Value.ToString();
+                    textbox_link_published_date.Text = row.Cells[9].Value.ToString();
                     if (DateTime.TryParse(row.Cells[5].Value?.ToString(), out DateTime linkDate))
                     {
                         datetime.Value = linkDate;
@@ -167,8 +167,8 @@ namespace datascience_project
                     cmd.Parameters.AddWithValue("@user_fullname", LoginPage.fullname);
                     cmd.Parameters.AddWithValue("@date", datetime.Value);
 
-                    //cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
-                    //cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
+                    cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
+                    cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
                     new popup(popup, cmd,"update").ShowDialog();
                     
                     btnDelete.Enabled = false;
@@ -388,5 +388,10 @@ namespace datascience_project
             new View_Link_Content().Show();
         }
 
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
