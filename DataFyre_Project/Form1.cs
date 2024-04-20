@@ -249,5 +249,9 @@ namespace datascience_project
 
         }
 
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            new import().Show();
+        }
     }
 }

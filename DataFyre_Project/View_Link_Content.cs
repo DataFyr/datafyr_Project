@@ -116,18 +116,22 @@ namespace datascience_project
 
         private void lstWordOccurrence_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             // Get the selected word from the list box
             string selectedWord = lstWordOccurrence.SelectedItem?.ToString();
-            string textOnly = Regex.Replace(selectedWord, @"[^a-zA-Z]+", "");
+            string textOnly = Regex.Replace(selectedWord, @"[^a-zA-Z-]+", "");
 
             if (!string.IsNullOrEmpty(textOnly))
             {
                 // Get the text from the textbox
-                string text = view_content_textbox.Text;
+                string text = view_content_textbox.Text.ToLower();
 
                 // Split the text into sentences using a regular expression
                 string[] sentences = Regex.Split(text, @"(?<=[\.!\?])\s+");
+
+                // Clear any existing highlights
+                view_content_textbox.SelectionStart = 0;
+                view_content_textbox.SelectionLength = view_content_textbox.Text.Length;
+                view_content_textbox.SelectionBackColor = Color.White;
 
                 // Loop through each sentence
                 for (int i = 0; i < sentences.Length; i++)
@@ -138,27 +142,20 @@ namespace datascience_project
                         // Find the index of the current sentence in the textbox text
                         int startIndex = text.IndexOf(sentences[i]);
 
-                        // Check if the sentence is already highlighted
-                        bool alreadyHighlighted = IsSentenceHighlighted(startIndex, sentences[i].Length);
+                        // Select the sentence
+                        view_content_textbox.Select(startIndex, sentences[i].Length);
 
-                        // If the sentence is not already highlighted, highlight it
-                        if (!alreadyHighlighted)
-                        {
-                            // Select the sentence
-                            view_content_textbox.Select(startIndex, sentences[i].Length);
+                        // Apply a different highlight color to each sentence
+                        view_content_textbox.SelectionBackColor = highlightColors[i % highlightColors.Length];
 
-                            // Apply a different highlight color to each sentence
-                            view_content_textbox.SelectionBackColor = highlightColors[i % highlightColors.Length];
-
-                            // Ensure the textbox has focus
-                            view_content_textbox.Focus();
-                        }
+                        // Ensure the textbox has focus
+                        view_content_textbox.Focus();
                     }
                 }
             }
         }
 
-      
+
         private bool IsSentenceHighlighted(int startIndex, int length)
         {
             // Get the selection start and length
@@ -220,7 +217,7 @@ namespace datascience_project
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.ExitThread();
+            this.Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
