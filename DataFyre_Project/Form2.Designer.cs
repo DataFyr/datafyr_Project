@@ -279,7 +279,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1021, 26);
             this.panel5.TabIndex = 41;
-            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
             // label7
             // 
@@ -365,7 +364,6 @@
             this.dashboardbtn.TabIndex = 37;
             this.dashboardbtn.Text = "Dashboard";
             this.dashboardbtn.UseVisualStyleBackColor = false;
-            this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
             // 
             // button7
             // 
@@ -581,11 +579,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1021, 778);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.textbox_link_published_date);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.textbox_link_author);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ddl_sub_category_name);
             this.Controls.Add(this.ddll_link_type);
