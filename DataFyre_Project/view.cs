@@ -28,6 +28,7 @@ namespace datascience_project
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         private void view_Load(object sender, EventArgs e)
         {
             fillCategory();
@@ -36,25 +37,24 @@ namespace datascience_project
         private void BtnClick_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Form1().ShowDialog();
+            new Form1().Show();
         }
 
         private void BtnSubCategory_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new SubCategoryInformation().ShowDialog(); 
+            new SubCategoryInformation().Show(); 
         }
 
         private void BtnLink_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Form2().ShowDialog();
+            new Form2().Show();
         }
 
         private void BtnView_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new view().ShowDialog();
+            new view().Show();
         }
 
         private void BtnUsers_Click(object sender, EventArgs e)
@@ -66,19 +66,19 @@ namespace datascience_project
             else
             {
                 this.Hide();
-                new user_management().ShowDialog();
+                new user_management().Show();
             }
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LoginPage().ShowDialog();
+            new LoginPage().Show();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -158,15 +158,19 @@ namespace datascience_project
                 SqlDataAdapter cmd = new SqlDataAdapter("select * from link where sub_category_id = '"+int.Parse(subcategory) + "' and link_type = '"+linktype+"'", con);
                 DataTable dt = new DataTable();
                 cmd.Fill(dt);
-                if(dt.Rows.Count>0)
+                if (dt.Rows.Count > 0)
+
                 {
                     dataGridView1.DataSource = dt;
                 }
                 else
                 {
-                    MessageBox.Show("No Data Available");
+
+                    String text = "               No Data Available";
+                    new popup(text).ShowDialog();
+                    
                 }
-                
+
             }
             catch (Exception ee)
             {
@@ -177,38 +181,39 @@ namespace datascience_project
 
         private void dashboardbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form3().ShowDialog();
+            new Form3().Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new SubCategoryInformation().ShowDialog();
+            new SubCategoryInformation().Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Form3().ShowDialog();
+            new Form3().Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form2().ShowDialog();
+            new Form2().Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new user_management().ShowDialog();
+            new user_management().Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LoginPage().ShowDialog();
+            new LoginPage().Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new view().Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

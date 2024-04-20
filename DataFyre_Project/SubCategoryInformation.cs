@@ -34,18 +34,32 @@ namespace datascience_project
             textbox_sub_categoryname.Text = string.Empty;
             ddl_category_name.SelectedIndex = 0;
         }
-        public void showcategoryInformation()
-        {
-
-        }
+       
         public void showSubcategoryInformation()
         {
+            try
+            {
+                if (con.State != System.Data.ConnectionState.Open)
+                {
+                    con.Open();
+                }
+                SqlDataAdapter sda = new SqlDataAdapter("select * from subcategory", con);
+                System.Data.DataTable dt = new System.Data.DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (textbox_sub_categoryname.Text != "" || ddl_category_name.Text !="")
             {
+                String msg = "              Saved Successfully";
                 try
                 {
                     if (con.State != System.Data.ConnectionState.Open)
@@ -59,7 +73,7 @@ namespace datascience_project
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
-                    MessageBox.Show("Sub Category information updated successfully.");
+                    new popup(msg).ShowDialog();
                     showSubcategoryInformation();
                     clearFields();
                 }
@@ -78,7 +92,7 @@ namespace datascience_project
         private void SubCategoryInformation_Load(object sender, EventArgs e)
         {
             btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
+            button1.Enabled = false;
             fillCategoryCombo();
             fillSubCategoryGrid();
             dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -86,6 +100,7 @@ namespace datascience_project
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            String msg = "Are You Sure You Want To Update";
             if (textbox_sub_categoryname.Text != "" || ddl_category_name.Text != "")
             {
                 try
@@ -98,11 +113,10 @@ namespace datascience_project
                     cmd.Parameters.AddWithValue("@subcategory_name", textbox_sub_categoryname.Text);
                     cmd.Parameters.AddWithValue("@category_id", ddl_category_name.SelectedValue);
                     cmd.Parameters.AddWithValue("@subcategory_id", sub_category_id);
-                    cmd.ExecuteNonQuery();
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
-                    MessageBox.Show("sub category information updated successfully.");
+                    new popup(msg,cmd,"update").ShowDialog();
                     showSubcategoryInformation();
                     clearFields();
                 }
@@ -120,7 +134,7 @@ namespace datascience_project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnUpdate.Enabled = true;
+            button1.Enabled = true;
             btnDelete.Enabled = true;
             btnSave.Enabled = false;
 
@@ -142,6 +156,7 @@ namespace datascience_project
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            String msg = "Are You Sure You Want To Delete";
             try
             {
                 if (con.State != System.Data.ConnectionState.Open)
@@ -150,11 +165,10 @@ namespace datascience_project
                 }
                 SqlCommand cmd = new SqlCommand("delete from subcategory where subcategory_id = @subcategory_id", con);
                 cmd.Parameters.AddWithValue("@subcategory_id", sub_category_id);
-                cmd.ExecuteNonQuery();
                 btnDelete.Enabled = false;
                 btnUpdate.Enabled = false;
                 btnSave.Enabled = true;
-                MessageBox.Show("Sub category information deleted successfully.");
+                new popup(msg, cmd, "delete").ShowDialog();
                 showSubcategoryInformation();
                 clearFields();
             }
@@ -168,19 +182,17 @@ namespace datascience_project
         private void subCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Form1().ShowDialog();
+            new Form1().Show();
         }
 
         private void linkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form2().ShowDialog();
+            new Form2().Show();
         }
 
         private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form1().ShowDialog();
+            new Form1().Show();
         }
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -191,21 +203,19 @@ namespace datascience_project
             }
             else
             {
-                this.Hide();
-                new user_management().ShowDialog();
+                new user_management().Show();
             }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LoginPage().ShowDialog();
+            new LoginPage().Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new view().ShowDialog();
+            new view().Show();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -226,7 +236,7 @@ namespace datascience_project
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            this.Close();
         }
 
         private void panel5_MouseDown(object sender, MouseEventArgs e)
@@ -238,8 +248,7 @@ namespace datascience_project
 
         private void dashboardbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form3().ShowDialog();
+            new Form3().Show();
         }
         public void fillCategoryCombo()
         {
@@ -282,10 +291,16 @@ namespace datascience_project
             }
         }
 
+
+        private void btnSubCategory_Click(object sender, EventArgs e)
+        {
+            new SubCategoryInformation().Show();
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();
             new View_Link_Content().ShowDialog();
+
         }
     }
 }

@@ -190,6 +190,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Content,
@@ -198,13 +200,28 @@
             this.dataGridView1.Location = new System.Drawing.Point(188, 489);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(810, 278);
             this.dataGridView1.TabIndex = 19;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // user_fullname
+            // 
+            this.user_fullname.DataPropertyName = "user_fullname";
+            this.user_fullname.HeaderText = "user_fullname";
+            this.user_fullname.Name = "user_fullname";
+            this.user_fullname.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+
             // linkBindingSource3
             // 
             this.linkBindingSource3.DataMember = "link";
@@ -230,7 +247,6 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Export to Excel";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // label6
             // 

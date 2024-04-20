@@ -101,6 +101,7 @@
             this.dashboardbtn.Text = "Dashboard";
             this.dashboardbtn.UseVisualStyleBackColor = false;
             this.dashboardbtn.CausesValidationChanged += new System.EventHandler(this.Form3_Load);
+            this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
             // 
             // btnLogout
             // 
