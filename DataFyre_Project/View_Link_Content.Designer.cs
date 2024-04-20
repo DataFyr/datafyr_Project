@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Link_Content));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.view_content_textbox = new System.Windows.Forms.RichTextBox();
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.lstWordOccurrence = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.columnKeyword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnValue = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -54,8 +56,6 @@
             this.BtnLink = new System.Windows.Forms.Button();
             this.BtnSub = new System.Windows.Forms.Button();
             this.BtnCateogry = new System.Windows.Forms.Button();
-            this.columnKeyword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnValue = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -92,11 +92,11 @@
             this.bunifuButton3.ColorContrastOnClick = 45;
             this.bunifuButton3.ColorContrastOnHover = 45;
             this.bunifuButton3.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.bunifuButton3.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.bunifuButton3.CustomizableEdges = borderEdges1;
             this.bunifuButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton3.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton3.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -194,6 +194,29 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dataGridView1.Size = new System.Drawing.Size(321, 434);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // columnKeyword
+            // 
+            this.columnKeyword.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnKeyword.DataPropertyName = "Value";
+            this.columnKeyword.HeaderText = "Keyword";
+            this.columnKeyword.Name = "columnKeyword";
+            // 
+            // columnValue
+            // 
+            this.columnValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnValue.HeaderText = "Value";
+            this.columnValue.Items.AddRange(new object[] {
+            "+1",
+            "+2",
+            "+3",
+            "  0",
+            "-1 ",
+            "-2",
+            "-3"});
+            this.columnValue.Name = "columnValue";
+            this.columnValue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel5
             // 
@@ -481,29 +504,6 @@
             this.BtnCateogry.UseVisualStyleBackColor = false;
             this.BtnCateogry.Click += new System.EventHandler(this.BtnCateogry_Click);
             // 
-            // columnKeyword
-            // 
-            this.columnKeyword.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.columnKeyword.DataPropertyName = "Value";
-            this.columnKeyword.HeaderText = "Keyword";
-            this.columnKeyword.Name = "columnKeyword";
-            // 
-            // columnValue
-            // 
-            this.columnValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.columnValue.HeaderText = "Value";
-            this.columnValue.Items.AddRange(new object[] {
-            "+1",
-            "+2",
-            "+3",
-            "  0",
-            "-1 ",
-            "-2",
-            "-3"});
-            this.columnValue.Name = "columnValue";
-            this.columnValue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.columnValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // View_Link_Content
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,7 +525,7 @@
             this.Controls.Add(this.view_content_textbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "View_Link_Content";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "View_Link_Content";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);

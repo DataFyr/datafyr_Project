@@ -172,5 +172,11 @@ namespace datascience_project
         {
             new Form3().Show();
         }
+
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
