@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.subcategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,14 +49,12 @@
             this.linkBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.linkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.datetime = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.dashboardbtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -98,9 +96,9 @@
             this.label1.Location = new System.Drawing.Point(183, 94);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Link Text";
+            this.label1.Text = "Source Text";
             // 
             // label3
             // 
@@ -110,9 +108,9 @@
             this.label3.Location = new System.Drawing.Point(183, 129);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.Size = new System.Drawing.Size(160, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Sub Link Text";
+            this.label3.Text = "Source Sub Link Text";
             // 
             // label4
             // 
@@ -129,28 +127,28 @@
             // textbox_link_text
             // 
             this.textbox_link_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_link_text.Location = new System.Drawing.Point(303, 87);
+            this.textbox_link_text.Location = new System.Drawing.Point(344, 87);
             this.textbox_link_text.Margin = new System.Windows.Forms.Padding(2);
             this.textbox_link_text.Name = "textbox_link_text";
-            this.textbox_link_text.Size = new System.Drawing.Size(689, 26);
+            this.textbox_link_text.Size = new System.Drawing.Size(648, 26);
             this.textbox_link_text.TabIndex = 12;
             // 
             // textbox_sub_link_text
             // 
             this.textbox_sub_link_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textbox_sub_link_text.Location = new System.Drawing.Point(303, 122);
+            this.textbox_sub_link_text.Location = new System.Drawing.Point(344, 123);
             this.textbox_sub_link_text.Margin = new System.Windows.Forms.Padding(2);
             this.textbox_sub_link_text.Name = "textbox_sub_link_text";
-            this.textbox_sub_link_text.Size = new System.Drawing.Size(689, 26);
+            this.textbox_sub_link_text.Size = new System.Drawing.Size(648, 26);
             this.textbox_sub_link_text.TabIndex = 13;
             // 
             // textbox_link_content
             // 
             this.textbox_link_content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textbox_link_content.Location = new System.Drawing.Point(303, 157);
+            this.textbox_link_content.Location = new System.Drawing.Point(344, 157);
             this.textbox_link_content.Margin = new System.Windows.Forms.Padding(2);
             this.textbox_link_content.Name = "textbox_link_content";
-            this.textbox_link_content.Size = new System.Drawing.Size(689, 26);
+            this.textbox_link_content.Size = new System.Drawing.Size(648, 26);
             this.textbox_link_content.TabIndex = 14;
             // 
             // btnSave
@@ -215,16 +213,16 @@
             // Content
             // 
             this.Content.DataPropertyName = "Content";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Format = "Show Content";
-            dataGridViewCellStyle1.NullValue = "Show Content";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
-            this.Content.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Content.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Format = "Show Content";
+            dataGridViewCellStyle2.NullValue = "Show Content";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
+            this.Content.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Content.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Content.HeaderText = "Content";
             this.Content.Name = "Content";
             this.Content.ReadOnly = true;
@@ -272,26 +270,6 @@
             this.button1.Text = "Export to Excel";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label6
-            // 
-            this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(184, 372);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 20);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Current Date";
-            // 
-            // datetime
-            // 
-            this.datetime.Location = new System.Drawing.Point(301, 371);
-            this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(224, 20);
-            this.datetime.TabIndex = 24;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
@@ -312,9 +290,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 16);
+            this.label7.Size = new System.Drawing.Size(164, 16);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Links";
+            this.label7.Text = "Data Source Management";
             // 
             // btnMinimize
             // 
@@ -347,7 +325,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.panel6.Controls.Add(this.button8);
+            this.panel6.Controls.Add(this.btnImport);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.button7);
             this.panel6.Controls.Add(this.button5);
@@ -361,20 +339,20 @@
             this.panel6.Size = new System.Drawing.Size(167, 752);
             this.panel6.TabIndex = 42;
             // 
-            // button8
+            // btnImport
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(3, 235);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(164, 60);
-            this.button8.TabIndex = 38;
-            this.button8.Text = "Link Contents";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Location = new System.Drawing.Point(0, 294);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(164, 47);
+            this.btnImport.TabIndex = 38;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // dashboardbtn
             // 
@@ -389,6 +367,7 @@
             this.dashboardbtn.TabIndex = 37;
             this.dashboardbtn.Text = "Dashboard";
             this.dashboardbtn.UseVisualStyleBackColor = false;
+            this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
             // 
             // button7
             // 
@@ -428,7 +407,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 292);
+            this.button4.Location = new System.Drawing.Point(0, 244);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 47);
             this.button4.TabIndex = 33;
@@ -447,7 +426,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 47);
             this.button3.TabIndex = 32;
-            this.button3.Text = "Links";
+            this.button3.Text = "Sources";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.linkToolStripMenuItem_Click);
             // 
@@ -462,7 +441,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(164, 47);
             this.button2.TabIndex = 31;
-            this.button2.Text = "Sub Category";
+            this.button2.Text = "Indicators";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.subCategoryToolStripMenuItem_Click);
             // 
@@ -477,23 +456,20 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(164, 47);
             this.button6.TabIndex = 30;
-            this.button6.Text = "Category";
+            this.button6.Text = "Projects";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // ddl_category
             // 
-            this.ddl_category.DataSource = this.tblcategoryBindingSource;
-            this.ddl_category.DisplayMember = "category_name";
             this.ddl_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ddl_category.FormattingEnabled = true;
-            this.ddl_category.Location = new System.Drawing.Point(303, 192);
+            this.ddl_category.Location = new System.Drawing.Point(344, 192);
             this.ddl_category.Margin = new System.Windows.Forms.Padding(2);
             this.ddl_category.Name = "ddl_category";
-            this.ddl_category.Size = new System.Drawing.Size(689, 28);
+            this.ddl_category.Size = new System.Drawing.Size(648, 28);
             this.ddl_category.TabIndex = 46;
-            this.ddl_category.ValueMember = "categoryid";
             this.ddl_category.SelectedIndexChanged += new System.EventHandler(this.ddl_category_SelectedIndexChanged);
             // 
             // tblcategoryBindingSource
@@ -508,9 +484,9 @@
             this.label8.Location = new System.Drawing.Point(183, 195);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 20);
+            this.label8.Size = new System.Drawing.Size(58, 20);
             this.label8.TabIndex = 45;
-            this.label8.Text = "Category";
+            this.label8.Text = "Project";
             // 
             // label2
             // 
@@ -520,9 +496,9 @@
             this.label2.Location = new System.Drawing.Point(183, 228);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 20);
+            this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 50;
-            this.label2.Text = "Sub Category";
+            this.label2.Text = "Indicators";
             // 
             // ddl_sub_category_name
             // 
@@ -531,10 +507,10 @@
             this.ddl_sub_category_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_sub_category_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ddl_sub_category_name.FormattingEnabled = true;
-            this.ddl_sub_category_name.Location = new System.Drawing.Point(303, 225);
+            this.ddl_sub_category_name.Location = new System.Drawing.Point(344, 225);
             this.ddl_sub_category_name.Margin = new System.Windows.Forms.Padding(2);
             this.ddl_sub_category_name.Name = "ddl_sub_category_name";
-            this.ddl_sub_category_name.Size = new System.Drawing.Size(689, 28);
+            this.ddl_sub_category_name.Size = new System.Drawing.Size(648, 28);
             this.ddl_sub_category_name.TabIndex = 49;
             this.ddl_sub_category_name.ValueMember = "subcategory_id";
             // 
@@ -548,10 +524,10 @@
             "LinkedIn",
             "Google",
             "Website"});
-            this.ddll_link_type.Location = new System.Drawing.Point(303, 258);
+            this.ddll_link_type.Location = new System.Drawing.Point(344, 258);
             this.ddll_link_type.Margin = new System.Windows.Forms.Padding(2);
             this.ddll_link_type.Name = "ddll_link_type";
-            this.ddll_link_type.Size = new System.Drawing.Size(689, 28);
+            this.ddll_link_type.Size = new System.Drawing.Size(648, 28);
             this.ddll_link_type.TabIndex = 48;
             // 
             // label5
@@ -562,26 +538,26 @@
             this.label5.Location = new System.Drawing.Point(183, 260);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 20);
+            this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 47;
-            this.label5.Text = "Link Type";
+            this.label5.Text = "Data Source";
             // 
             // textbox_link_published_date
             // 
             this.textbox_link_published_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textbox_link_published_date.Location = new System.Drawing.Point(301, 330);
+            this.textbox_link_published_date.Location = new System.Drawing.Point(344, 330);
             this.textbox_link_published_date.Margin = new System.Windows.Forms.Padding(2);
             this.textbox_link_published_date.Name = "textbox_link_published_date";
-            this.textbox_link_published_date.Size = new System.Drawing.Size(689, 26);
+            this.textbox_link_published_date.Size = new System.Drawing.Size(646, 26);
             this.textbox_link_published_date.TabIndex = 54;
             // 
             // textbox_link_author
             // 
             this.textbox_link_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textbox_link_author.Location = new System.Drawing.Point(301, 295);
+            this.textbox_link_author.Location = new System.Drawing.Point(344, 295);
             this.textbox_link_author.Margin = new System.Windows.Forms.Padding(2);
             this.textbox_link_author.Name = "textbox_link_author";
-            this.textbox_link_author.Size = new System.Drawing.Size(689, 26);
+            this.textbox_link_author.Size = new System.Drawing.Size(646, 26);
             this.textbox_link_author.TabIndex = 53;
             // 
             // label9
@@ -589,7 +565,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(172, 333);
+            this.label9.Location = new System.Drawing.Point(183, 336);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(117, 20);
@@ -601,12 +577,12 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(181, 302);
+            this.label10.Location = new System.Drawing.Point(181, 295);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 20);
+            this.label10.Size = new System.Drawing.Size(112, 20);
             this.label10.TabIndex = 51;
-            this.label10.Text = "Link Author";
+            this.label10.Text = "Source Author";
             // 
             // Form2
             // 
@@ -626,8 +602,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.datetime);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDelete);
@@ -673,8 +647,6 @@
         private System.Windows.Forms.BindingSource subcategoryBindingSource;
         private System.Windows.Forms.BindingSource linkBindingSource1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker datetime;
         private System.Windows.Forms.BindingSource linkBindingSource2;
         private System.Windows.Forms.BindingSource linkBindingSource3;
         private System.Windows.Forms.Panel panel5;
@@ -697,13 +669,13 @@
         private System.Windows.Forms.ComboBox ddll_link_type;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.BindingSource tblcategoryBindingSource;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridViewButtonColumn Content;
-        private System.Windows.Forms.DataGridViewTextBoxColumn user_fullname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.TextBox textbox_link_published_date;
         private System.Windows.Forms.TextBox textbox_link_author;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.DataGridViewButtonColumn Content;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_fullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
     }
 }

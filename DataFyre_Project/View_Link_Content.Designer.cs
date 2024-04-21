@@ -47,15 +47,15 @@
             this.btnLinks = new System.Windows.Forms.Button();
             this.btnSubCategory = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.BtnDashboard = new System.Windows.Forms.Button();
-            this.BtnLogingOut = new System.Windows.Forms.Button();
-            this.BtnViewTab = new System.Windows.Forms.Button();
-            this.BtnUser = new System.Windows.Forms.Button();
-            this.BtnLink = new System.Windows.Forms.Button();
-            this.BtnSub = new System.Windows.Forms.Button();
             this.BtnCateogry = new System.Windows.Forms.Button();
+            this.BtnSub = new System.Windows.Forms.Button();
+            this.BtnLink = new System.Windows.Forms.Button();
+            this.BtnUser = new System.Windows.Forms.Button();
+            this.BtnViewTab = new System.Windows.Forms.Button();
+            this.BtnLogingOut = new System.Windows.Forms.Button();
+            this.BtnDashboard = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -229,6 +229,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1066, 26);
             this.panel5.TabIndex = 12;
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown_1);
             // 
             // label2
             // 
@@ -237,9 +238,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 14);
+            this.label2.Size = new System.Drawing.Size(72, 14);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Dashboard";
+            this.label2.Text = "Analyzation";
             // 
             // btnMinimize
             // 
@@ -367,67 +368,65 @@
             this.btnCategory.Text = "Category";
             this.btnCategory.UseVisualStyleBackColor = false;
             // 
-            // panel6
+            // BtnCateogry
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Controls.Add(this.BtnDashboard);
-            this.panel6.Controls.Add(this.BtnLogingOut);
-            this.panel6.Controls.Add(this.BtnViewTab);
-            this.panel6.Controls.Add(this.BtnUser);
-            this.panel6.Controls.Add(this.BtnLink);
-            this.panel6.Controls.Add(this.BtnSub);
-            this.panel6.Controls.Add(this.BtnCateogry);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 26);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(167, 495);
-            this.panel6.TabIndex = 43;
+            this.BtnCateogry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.BtnCateogry.FlatAppearance.BorderSize = 0;
+            this.BtnCateogry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCateogry.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnCateogry.ForeColor = System.Drawing.Color.White;
+            this.BtnCateogry.Location = new System.Drawing.Point(3, 43);
+            this.BtnCateogry.Name = "BtnCateogry";
+            this.BtnCateogry.Size = new System.Drawing.Size(164, 60);
+            this.BtnCateogry.TabIndex = 30;
+            this.BtnCateogry.Text = "Projects";
+            this.BtnCateogry.UseVisualStyleBackColor = false;
+            this.BtnCateogry.Click += new System.EventHandler(this.BtnCateogry_Click);
             // 
-            // button1
+            // BtnSub
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 60);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Link Contents";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnSub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.BtnSub.FlatAppearance.BorderSize = 0;
+            this.BtnSub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSub.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnSub.ForeColor = System.Drawing.Color.White;
+            this.BtnSub.Location = new System.Drawing.Point(3, 91);
+            this.BtnSub.Name = "BtnSub";
+            this.BtnSub.Size = new System.Drawing.Size(164, 60);
+            this.BtnSub.TabIndex = 31;
+            this.BtnSub.Text = "Indicators";
+            this.BtnSub.UseVisualStyleBackColor = false;
+            this.BtnSub.Click += new System.EventHandler(this.BtnSub_Click);
             // 
-            // BtnDashboard
+            // BtnLink
             // 
-            this.BtnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.BtnDashboard.FlatAppearance.BorderSize = 0;
-            this.BtnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDashboard.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDashboard.ForeColor = System.Drawing.Color.White;
-            this.BtnDashboard.Location = new System.Drawing.Point(3, 3);
-            this.BtnDashboard.Name = "BtnDashboard";
-            this.BtnDashboard.Size = new System.Drawing.Size(164, 47);
-            this.BtnDashboard.TabIndex = 31;
-            this.BtnDashboard.Text = "Dashboard";
-            this.BtnDashboard.UseVisualStyleBackColor = false;
-            this.BtnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
+            this.BtnLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.BtnLink.FlatAppearance.BorderSize = 0;
+            this.BtnLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLink.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnLink.ForeColor = System.Drawing.Color.White;
+            this.BtnLink.Location = new System.Drawing.Point(3, 144);
+            this.BtnLink.Name = "BtnLink";
+            this.BtnLink.Size = new System.Drawing.Size(164, 60);
+            this.BtnLink.TabIndex = 32;
+            this.BtnLink.Text = "Sources";
+            this.BtnLink.UseVisualStyleBackColor = false;
+            this.BtnLink.Click += new System.EventHandler(this.BtnLink_Click);
             // 
-            // BtnLogingOut
+            // BtnUser
             // 
-            this.BtnLogingOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
-            this.BtnLogingOut.FlatAppearance.BorderSize = 0;
-            this.BtnLogingOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogingOut.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnLogingOut.ForeColor = System.Drawing.Color.White;
-            this.BtnLogingOut.Location = new System.Drawing.Point(0, 447);
-            this.BtnLogingOut.Name = "BtnLogingOut";
-            this.BtnLogingOut.Size = new System.Drawing.Size(167, 47);
-            this.BtnLogingOut.TabIndex = 35;
-            this.BtnLogingOut.Text = "Log Out";
-            this.BtnLogingOut.UseVisualStyleBackColor = false;
-            this.BtnLogingOut.Click += new System.EventHandler(this.BtnLogingOut_Click);
+            this.BtnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.BtnUser.FlatAppearance.BorderSize = 0;
+            this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUser.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnUser.ForeColor = System.Drawing.Color.White;
+            this.BtnUser.Location = new System.Drawing.Point(3, 241);
+            this.BtnUser.Name = "BtnUser";
+            this.BtnUser.Size = new System.Drawing.Size(164, 60);
+            this.BtnUser.TabIndex = 33;
+            this.BtnUser.Text = "Users";
+            this.BtnUser.UseVisualStyleBackColor = false;
+            this.BtnUser.Click += new System.EventHandler(this.BtnUser_Click);
             // 
             // BtnViewTab
             // 
@@ -444,65 +443,67 @@
             this.BtnViewTab.UseVisualStyleBackColor = false;
             this.BtnViewTab.Click += new System.EventHandler(this.BtnViewTab_Click);
             // 
-            // BtnUser
+            // BtnLogingOut
             // 
-            this.BtnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.BtnUser.FlatAppearance.BorderSize = 0;
-            this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUser.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnUser.ForeColor = System.Drawing.Color.White;
-            this.BtnUser.Location = new System.Drawing.Point(0, 317);
-            this.BtnUser.Name = "BtnUser";
-            this.BtnUser.Size = new System.Drawing.Size(164, 60);
-            this.BtnUser.TabIndex = 33;
-            this.BtnUser.Text = "Users";
-            this.BtnUser.UseVisualStyleBackColor = false;
-            this.BtnUser.Click += new System.EventHandler(this.BtnUser_Click);
+            this.BtnLogingOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(105)))), ((int)(((byte)(110)))));
+            this.BtnLogingOut.FlatAppearance.BorderSize = 0;
+            this.BtnLogingOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogingOut.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnLogingOut.ForeColor = System.Drawing.Color.White;
+            this.BtnLogingOut.Location = new System.Drawing.Point(0, 447);
+            this.BtnLogingOut.Name = "BtnLogingOut";
+            this.BtnLogingOut.Size = new System.Drawing.Size(167, 47);
+            this.BtnLogingOut.TabIndex = 35;
+            this.BtnLogingOut.Text = "Log Out";
+            this.BtnLogingOut.UseVisualStyleBackColor = false;
+            this.BtnLogingOut.Click += new System.EventHandler(this.BtnLogingOut_Click);
             // 
-            // BtnLink
+            // BtnDashboard
             // 
-            this.BtnLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.BtnLink.FlatAppearance.BorderSize = 0;
-            this.BtnLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLink.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnLink.ForeColor = System.Drawing.Color.White;
-            this.BtnLink.Location = new System.Drawing.Point(3, 144);
-            this.BtnLink.Name = "BtnLink";
-            this.BtnLink.Size = new System.Drawing.Size(164, 60);
-            this.BtnLink.TabIndex = 32;
-            this.BtnLink.Text = "Links";
-            this.BtnLink.UseVisualStyleBackColor = false;
-            this.BtnLink.Click += new System.EventHandler(this.BtnLink_Click);
+            this.BtnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.BtnDashboard.FlatAppearance.BorderSize = 0;
+            this.BtnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDashboard.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDashboard.ForeColor = System.Drawing.Color.White;
+            this.BtnDashboard.Location = new System.Drawing.Point(3, 3);
+            this.BtnDashboard.Name = "BtnDashboard";
+            this.BtnDashboard.Size = new System.Drawing.Size(164, 47);
+            this.BtnDashboard.TabIndex = 31;
+            this.BtnDashboard.Text = "Dashboard";
+            this.BtnDashboard.UseVisualStyleBackColor = false;
+            this.BtnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
-            // BtnSub
+            // panel6
             // 
-            this.BtnSub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.BtnSub.FlatAppearance.BorderSize = 0;
-            this.BtnSub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSub.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnSub.ForeColor = System.Drawing.Color.White;
-            this.BtnSub.Location = new System.Drawing.Point(3, 91);
-            this.BtnSub.Name = "BtnSub";
-            this.BtnSub.Size = new System.Drawing.Size(164, 60);
-            this.BtnSub.TabIndex = 31;
-            this.BtnSub.Text = "Sub Category";
-            this.BtnSub.UseVisualStyleBackColor = false;
-            this.BtnSub.Click += new System.EventHandler(this.BtnSub_Click);
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.panel6.Controls.Add(this.btnImport);
+            this.panel6.Controls.Add(this.BtnDashboard);
+            this.panel6.Controls.Add(this.BtnLogingOut);
+            this.panel6.Controls.Add(this.BtnViewTab);
+            this.panel6.Controls.Add(this.BtnUser);
+            this.panel6.Controls.Add(this.BtnLink);
+            this.panel6.Controls.Add(this.BtnSub);
+            this.panel6.Controls.Add(this.BtnCateogry);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 26);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(167, 495);
+            this.panel6.TabIndex = 43;
             // 
-            // BtnCateogry
+            // btnImport
             // 
-            this.BtnCateogry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.BtnCateogry.FlatAppearance.BorderSize = 0;
-            this.BtnCateogry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCateogry.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.BtnCateogry.ForeColor = System.Drawing.Color.White;
-            this.BtnCateogry.Location = new System.Drawing.Point(3, 43);
-            this.BtnCateogry.Name = "BtnCateogry";
-            this.BtnCateogry.Size = new System.Drawing.Size(164, 60);
-            this.BtnCateogry.TabIndex = 30;
-            this.BtnCateogry.Text = "Category";
-            this.BtnCateogry.UseVisualStyleBackColor = false;
-            this.BtnCateogry.Click += new System.EventHandler(this.BtnCateogry_Click);
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Location = new System.Drawing.Point(3, 292);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(164, 47);
+            this.btnImport.TabIndex = 36;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // View_Link_Content
             // 
@@ -552,16 +553,16 @@
         private System.Windows.Forms.Button btnLinks;
         private System.Windows.Forms.Button btnSubCategory;
         private System.Windows.Forms.Button btnCategory;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button BtnDashboard;
-        private System.Windows.Forms.Button BtnLogingOut;
-        private System.Windows.Forms.Button BtnViewTab;
-        private System.Windows.Forms.Button BtnUser;
-        private System.Windows.Forms.Button BtnLink;
-        private System.Windows.Forms.Button BtnSub;
-        private System.Windows.Forms.Button BtnCateogry;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnKeyword;
         private System.Windows.Forms.DataGridViewComboBoxColumn columnValue;
+        private System.Windows.Forms.Button BtnCateogry;
+        private System.Windows.Forms.Button BtnSub;
+        private System.Windows.Forms.Button BtnLink;
+        private System.Windows.Forms.Button BtnUser;
+        private System.Windows.Forms.Button BtnViewTab;
+        private System.Windows.Forms.Button BtnLogingOut;
+        private System.Windows.Forms.Button BtnDashboard;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnImport;
     }
 }

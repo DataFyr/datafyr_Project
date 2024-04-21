@@ -54,7 +54,7 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.dashboardbtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -135,9 +135,9 @@
             this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(179, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 19);
+            this.label4.Size = new System.Drawing.Size(121, 19);
             this.label4.TabIndex = 63;
-            this.label4.Text = "Sub Category";
+            this.label4.Text = "Indicator Name:";
             // 
             // label3
             // 
@@ -145,9 +145,9 @@
             this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(179, 173);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 19);
+            this.label3.Size = new System.Drawing.Size(96, 19);
             this.label3.TabIndex = 62;
-            this.label3.Text = "Link Type";
+            this.label3.Text = "Data Source";
             // 
             // label1
             // 
@@ -155,9 +155,9 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(179, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 19);
+            this.label1.Size = new System.Drawing.Size(108, 19);
             this.label1.TabIndex = 61;
-            this.label1.Text = "Category";
+            this.label1.Text = "Project Name:";
             // 
             // btmShowData
             // 
@@ -269,7 +269,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.panel6.Controls.Add(this.button1);
+            this.panel6.Controls.Add(this.btnImport);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.button7);
             this.panel6.Controls.Add(this.button5);
@@ -283,20 +283,20 @@
             this.panel6.Size = new System.Drawing.Size(167, 494);
             this.panel6.TabIndex = 65;
             // 
-            // button1
+            // btnImport
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 60);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Link Contents";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Location = new System.Drawing.Point(2, 287);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(164, 47);
+            this.btnImport.TabIndex = 38;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // dashboardbtn
             // 
@@ -336,7 +336,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 200);
+            this.button5.Location = new System.Drawing.Point(0, 196);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(164, 47);
             this.button5.TabIndex = 34;
@@ -351,7 +351,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 319);
+            this.button4.Location = new System.Drawing.Point(0, 244);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 47);
             this.button4.TabIndex = 33;
@@ -370,7 +370,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 47);
             this.button3.TabIndex = 32;
-            this.button3.Text = "Links";
+            this.button3.Text = "Sources";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -385,7 +385,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(164, 47);
             this.button2.TabIndex = 31;
-            this.button2.Text = "Sub Category";
+            this.button2.Text = "Indicators";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.BtnSubCategory_Click);
             // 
@@ -400,7 +400,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(164, 47);
             this.button6.TabIndex = 30;
-            this.button6.Text = "Category";
+            this.button6.Text = "Projects";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -492,6 +492,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImport;
     }
 }

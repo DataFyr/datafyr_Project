@@ -116,12 +116,12 @@ namespace datascience_project
                 string category_name = ComboBoxCategory.Text;
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlDataAdapter cmd = new SqlDataAdapter("select subcategory.subcategory_name,subcategory.subcategory_id from category inner join subcategory on subcategory.category_id = category.categoryid where category.category_name = '" + category_name + "'", con);
+                SqlDataAdapter cmd = new SqlDataAdapter("select indicators.indicator_name,indicators.indicator_id from projects inner join indicators on indicators.project_id = projects.project_id where projects.project_name = '" + category_name + "'", con);
                 DataTable dt = new DataTable();
                 cmd.Fill(dt);
                 ComboBoxSubCategory.DataSource = dt;
-                ComboBoxSubCategory.ValueMember = "subcategory_id";
-                ComboBoxSubCategory.DisplayMember = "subcategory_name";
+                ComboBoxSubCategory.ValueMember = "indicator_id";
+                ComboBoxSubCategory.DisplayMember = "indicator_name";
             }
             catch (Exception ee)
             {
@@ -135,10 +135,12 @@ namespace datascience_project
             {
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlDataAdapter cmd = new SqlDataAdapter("select * from category", con);
+                SqlDataAdapter cmd = new SqlDataAdapter("select project_id as 'Project ID', project_name as 'Project Name'  from projects", con);
                 DataTable dt = new DataTable();
                 cmd.Fill(dt);
                 ComboBoxCategory.DataSource = dt;
+                ComboBoxCategory.ValueMember = "Project ID";
+                ComboBoxCategory.DisplayMember = "Project Name";
             }
             catch (Exception ee)
             {
@@ -155,7 +157,7 @@ namespace datascience_project
                 con.Open();
                 string subcategory = ComboBoxSubCategory.SelectedValue.ToString();
                 string linktype = ComboBoxLinkType.Text.ToString();
-                SqlDataAdapter cmd = new SqlDataAdapter("select * from link where sub_category_id = '"+int.Parse(subcategory) + "' and link_type = '"+linktype+"'", con);
+                SqlDataAdapter cmd = new SqlDataAdapter("Select * FROM sources WHERE indicator_id = '"+int.Parse(subcategory) + "' and source_link_type = '"+linktype+"'", con);
                 DataTable dt = new DataTable();
                 cmd.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -207,8 +209,8 @@ namespace datascience_project
 
         private void button7_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new LoginPage().Show();
+            string msg = "Are you sure you want to logout";
+            new logoutpopup(msg).Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -220,6 +222,11 @@ namespace datascience_project
         {
             this.Hide();
             new View_Link_Content().ShowDialog();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            new import().Show();
         }
     }
 }

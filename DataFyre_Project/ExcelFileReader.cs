@@ -5,10 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Office.Interop.Excel;
 
 namespace datascience_project
 {
-    class ExcelFileReader
+    internal class ExcelFileReader
     {
         public static System.Data.DataTable read(Range excelRange)
         {
@@ -55,4 +56,6 @@ namespace datascience_project
             return dt;
         }
     }
+    
+
 }

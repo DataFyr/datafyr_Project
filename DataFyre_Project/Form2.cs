@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,7 @@ namespace datascience_project
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             String msg = "              Saved Successfully";
             if (ddl_sub_category_name.Text != "" || ddll_link_type.Text != "" || textbox_link_text.Text != "" || textbox_sub_link_text.Text != "" || textbox_link_content.Text !="")
             {
@@ -50,16 +52,16 @@ namespace datascience_project
                 {
                     SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO link VALUES (@link_text,@sub_link_text,@link_content,@link_type,@sub_category_id,@user_fullname,@date,@author,@published_date)", con);
-                    cmd.Parameters.AddWithValue("@link_text", textbox_link_text.Text);
-                    cmd.Parameters.AddWithValue("@sub_link_text", textbox_sub_link_text.Text);
-                    cmd.Parameters.AddWithValue("@link_content", textbox_link_content.Text);
-                    cmd.Parameters.AddWithValue("@link_type", ddll_link_type.Text);
-                    cmd.Parameters.AddWithValue("@sub_category_id", ddl_sub_category_name.SelectedValue);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO sources VALUES (@source_link_text,@source_sub_link_text,@source_link_content,@source_link_type,@indicator_id,@user_fullname,@source_entry_date,@source_author,@source_published_date)", con);
+                    cmd.Parameters.AddWithValue("@source_link_text", textbox_link_text.Text);
+                    cmd.Parameters.AddWithValue("@source_sub_link_text", textbox_sub_link_text.Text);
+                    cmd.Parameters.AddWithValue("@source_link_content", textbox_link_content.Text);
+                    cmd.Parameters.AddWithValue("@source_link_type", ddll_link_type.Text);
+                    cmd.Parameters.AddWithValue("@indicator_id", ddl_sub_category_name.SelectedValue);
                     cmd.Parameters.AddWithValue("@user_fullname", LoginPage.fullname);
-                    cmd.Parameters.AddWithValue("@date", datetime.Value);
-                    cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
-                    cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
+                    cmd.Parameters.AddWithValue("@source_entry_date", DateTime.Now.ToString());
+                    cmd.Parameters.AddWithValue("@source_author", textbox_link_author.Text);
+                    cmd.Parameters.AddWithValue("@source_published_date", textbox_link_published_date.Text);
                     cmd.ExecuteNonQuery();
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
@@ -101,22 +103,20 @@ namespace datascience_project
             if (e.RowIndex > 0)
             {
 
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-                if (row != null) {
-                    
-                textbox_link_text.Text = row.Cells[2].Value.ToString();
-                textbox_sub_link_text.Text = row.Cells[3].Value.ToString();
-                textbox_link_content.Text = row.Cells[4].Value.ToString();
-                ddll_link_type.Text = row.Cells[5].Value.ToString();
-                ddl_sub_category_name.SelectedText = row.Cells[6].Value.ToString();
-                link_id = int.Parse(row.Cells[1].Value.ToString());
+                if (row != null)
+                {
+
+                    textbox_link_text.Text = row.Cells[3].Value.ToString();
+                    textbox_sub_link_text.Text = row.Cells[4].Value.ToString();
+                    textbox_link_content.Text = row.Cells[5].Value.ToString();
+                    ddll_link_type.Text = row.Cells[6].Value.ToString();
+                    ddl_sub_category_name.SelectedText = row.Cells[7].Value.ToString();
+                    link_id = int.Parse(row.Cells[2].Value.ToString());
                     textbox_link_author.Text = row.Cells[8].Value.ToString();
                     textbox_link_published_date.Text = row.Cells[9].Value.ToString();
-                    if (DateTime.TryParse(row.Cells[5].Value?.ToString(), out DateTime linkDate))
-                    {
-                        datetime.Value = linkDate;
-                    }
+                    
                     if (link_id < 0 || link_id == 0)
                     {
                         String msg = "Empty Cell";
@@ -127,23 +127,11 @@ namespace datascience_project
 
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Content")
                 {
-
-
-                    if (MessageBox.Show("Are you sure want to see the contents of this link ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
                         View_Link_Content viewLinkContentForm = new View_Link_Content();
                         viewLinkContentForm.view_content_textbox.Text = row.Cells[4].Value.ToString();
-                        viewLinkContentForm.ShowDialog();
-
-                    }
-                    else
-                    {
-                        this.Hide();
-                        new Form2().ShowDialog();
-                       
-                    }
+                        viewLinkContentForm.Show();
                 }
-              
+
             }
         }
 
@@ -157,18 +145,18 @@ namespace datascience_project
                 {
                     SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("update link set link_text = @link_text,sub_link_text = @sub_link_text,link_content = @link_content,link_type = @link_type,sub_category_id = @sub_category_id,user_fullname=@user_fullname,date=@date,author=@author,published_date = @published_date where link_id = @link_id", con);
-                    cmd.Parameters.AddWithValue("@link_text", textbox_link_text.Text);
-                    cmd.Parameters.AddWithValue("@sub_link_text", textbox_sub_link_text.Text);
-                    cmd.Parameters.AddWithValue("@link_content", textbox_link_content.Text);
-                    cmd.Parameters.AddWithValue("@link_type", ddll_link_type.Text);
-                    cmd.Parameters.AddWithValue("@sub_category_id", ddl_sub_category_name.SelectedValue);
-                    cmd.Parameters.AddWithValue("@link_id", link_id);
+                    SqlCommand cmd = new SqlCommand("update sources set source_link_text = @source_link_text,source_sub_link_text = @source_sub_link_text,source_link_content = @source_link_content,source_link_type = @source_link_type,indicator_id = @indicator_id,user_fullname=@user_fullname,source_entry_date=@source_entry_date,source_author=@source_author,source_published_date = @source_published_date where source_id = @source_id", con);
+                    cmd.Parameters.AddWithValue("@source_link_text", textbox_link_text.Text);
+                    cmd.Parameters.AddWithValue("@source_sub_link_text", textbox_sub_link_text.Text);
+                    cmd.Parameters.AddWithValue("@source_link_content", textbox_link_content.Text);
+                    cmd.Parameters.AddWithValue("@source_link_type", ddll_link_type.Text);
+                    cmd.Parameters.AddWithValue("@indicator_id", ddl_sub_category_name.SelectedValue);
+                    cmd.Parameters.AddWithValue("@source_id", link_id);
                     cmd.Parameters.AddWithValue("@user_fullname", LoginPage.fullname);
-                    cmd.Parameters.AddWithValue("@date", datetime.Value);
+                    cmd.Parameters.AddWithValue("@source_entry_date", DateTime.Now.ToString());
 
-                    cmd.Parameters.AddWithValue("@author", textbox_link_author.Text);
-                    cmd.Parameters.AddWithValue("@published_date", textbox_link_published_date.Text);
+                    cmd.Parameters.AddWithValue("@source_author", textbox_link_author.Text);
+                    cmd.Parameters.AddWithValue("@source_published_date", textbox_link_published_date.Text);
                     new popup(popup, cmd,"update").ShowDialog();
                     
                     btnDelete.Enabled = false;
@@ -196,8 +184,8 @@ namespace datascience_project
                 var popup = "Are You Sure You Want To Delete";
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                    SqlCommand cmd = new SqlCommand("delete link where link_id = @link_id ", con);
-                    cmd.Parameters.AddWithValue("@link_id", link_id);
+                    SqlCommand cmd = new SqlCommand("delete from sources where source_id = @source_id ", con);
+                    cmd.Parameters.AddWithValue("@source_id", link_id);
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
@@ -283,8 +271,8 @@ namespace datascience_project
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new LoginPage().Show();
+            string msg = "Are you sure you want to logout";
+            new logoutpopup(msg).Show();
         }
 
         private void button1_Click_2(object sender, EventArgs e)
@@ -303,12 +291,12 @@ namespace datascience_project
                 string category_name = ddl_category.Text;
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlDataAdapter cmd = new SqlDataAdapter("select subcategory.subcategory_name,subcategory.subcategory_id from category inner join subcategory on subcategory.category_id = category.categoryid where category.category_name = '" + category_name + "'", con);
-                DataTable dt = new DataTable();
+                SqlDataAdapter cmd = new SqlDataAdapter("select indicators.indicator_name,indicators.indicator_id from projects inner join indicators on indicators.project_id = projects.project_id where projects.project_name = '" + category_name + "'", con);
+                System.Data.DataTable dt = new System.Data.DataTable();
                 cmd.Fill(dt);
                 ddl_sub_category_name.DataSource = dt;
-                ddl_sub_category_name.ValueMember = "subcategory_id";
-                ddl_sub_category_name.DisplayMember = "subcategory_name";
+                ddl_sub_category_name.ValueMember = "indicator_id";
+                ddl_sub_category_name.DisplayMember = "indicator_name";
             }
             catch (Exception ee)
             {
@@ -351,8 +339,8 @@ namespace datascience_project
                 string category_name = ddl_category.Text;
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlDataAdapter cmd = new SqlDataAdapter("select * from link", con);
-                DataTable dt = new DataTable();
+                SqlDataAdapter cmd = new SqlDataAdapter("select * from sources", con);
+                System.Data.DataTable dt = new System.Data.DataTable();
                 cmd.Fill(dt);
                 dataGridView1.DataSource = dt;
             }
@@ -364,17 +352,20 @@ namespace datascience_project
         }
         public void fillCategoryCombo()
         {
+            SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
+
             try
             {
-                string category_name = ddl_category.Text;
-                SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
-                con.Open();
-                SqlDataAdapter cmd = new SqlDataAdapter("select * from category", con);
-                DataTable dt = new DataTable();
-                cmd.Fill(dt);
+                if (con.State != System.Data.ConnectionState.Open)
+                {
+                    con.Open();
+                }
+                SqlDataAdapter sda = new SqlDataAdapter("select * from projects", con);
+                System.Data.DataTable dt = new System.Data.DataTable();
+                sda.Fill(dt);
                 ddl_category.DataSource = dt;
-                ddl_category.ValueMember = "categoryid";
-                ddl_category.DisplayMember = "category_name";
+                ddl_category.ValueMember = "project_id";
+                ddl_category.DisplayMember = "project_name";
             }
             catch (Exception ee)
             {
@@ -392,6 +383,16 @@ namespace datascience_project
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void dashboardbtn_Click(object sender, EventArgs e)
+        {
+            new Form3().Show();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            new import().Show();
         }
     }
 }

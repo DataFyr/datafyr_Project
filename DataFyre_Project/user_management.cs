@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,11 @@ namespace datascience_project
         {
             InitializeComponent();
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         public void showInformation()
         {
         }
@@ -186,8 +192,8 @@ namespace datascience_project
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new LoginPage().ShowDialog();
+            string msg = "Are you sure you want to logout";
+            new logoutpopup(msg).Show();
         }
         public void fillCategoryGridUser()
         {
@@ -231,7 +237,13 @@ namespace datascience_project
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //new import().ShowDialog();
+            new import().ShowDialog();
+        }
+
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

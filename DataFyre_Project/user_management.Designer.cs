@@ -48,6 +48,7 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.dashboardbtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagridUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
@@ -171,6 +171,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(951, 26);
             this.panel5.TabIndex = 41;
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             // 
             // label5
             // 
@@ -179,7 +180,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(4, 5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 6;
             this.label5.Text = "Users";
             // 
@@ -227,6 +228,21 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(167, 563);
             this.panel6.TabIndex = 42;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(3, 291);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(164, 47);
+            this.button6.TabIndex = 39;
+            this.button6.Text = "Import";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // dashboardbtn
             // 
@@ -300,7 +316,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 47);
             this.button3.TabIndex = 32;
-            this.button3.Text = "Links";
+            this.button3.Text = "Sources";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.linkToolStripMenuItem_Click);
             // 
@@ -315,7 +331,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(164, 47);
             this.button2.TabIndex = 31;
-            this.button2.Text = "Sub Category";
+            this.button2.Text = "Indicators";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.subCategoryToolStripMenuItem_Click);
             // 
@@ -330,7 +346,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 47);
             this.button1.TabIndex = 30;
-            this.button1.Text = "Category";
+            this.button1.Text = "Projects";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
@@ -424,42 +440,7 @@
             this.btnDelete.UseDefaultRadiusAndThickness = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // menuStrip1
-            // 
-            //this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            //this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            //this.categoryToolStripMenuItem,
-            //this.subCategoryToolStripMenuItem,
-            //this.linkToolStripMenuItem,
-            //this.usersToolStripMenuItem,
-            //this.logoutToolStripMenuItem});
-            //this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            //this.menuStrip1.Name = "menuStrip1";
-            //this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            //this.menuStrip1.Size = new System.Drawing.Size(1006, 24);
-            //this.menuStrip1.TabIndex = 23;
-            //this.menuStrip1.Text = "menuStrip1";
-            // 
-            // categoryToolStripMenuItem
-            // 
-            //this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            //this.categoryToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
-            //this.categoryToolStripMenuItem.Text = "Category";
-            //this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
-            //// 
-            //// subCategoryToolStripMenuItem
-            //// 
-            //this.subCategoryToolStripMenuItem.Name = "subCategoryToolStripMenuItem";
-            //this.subCategoryToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
-            //this.subCategoryToolStripMenuItem.Text = "Sub Category";
-            //this.subCategoryToolStripMenuItem.Click += new System.EventHandler(this.subCategoryToolStripMenuItem_Click);
-            //// 
-            //// linkToolStripMenuItem
-            //// 
-            //this.linkToolStripMenuItem.Name = "linkToolStripMenuItem";
-            //this.linkToolStripMenuItem.Size = new System.Drawing.Size(41, 22);
-            //this.linkToolStripMenuItem.Text = "Link";
-            //this.linkToolStripMenuItem.Click += new System.EventHandler(this.linkToolStripMenuItem_Click);
+            // btnUpdate
             // 
             this.btnUpdate.AllowAnimations = true;
             this.btnUpdate.AllowMouseEffects = true;
@@ -638,21 +619,6 @@
             this.btnSave.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSave.UseDefaultRadiusAndThickness = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(3, 282);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(164, 47);
-            this.button6.TabIndex = 39;
-            this.button6.Text = "Import";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // user_management
             // 

@@ -11,6 +11,7 @@ using System.Speech.Synthesis;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace datascience_project
 {
@@ -51,6 +52,11 @@ namespace datascience_project
             InitializeComponent();
             synthesizer = new SpeechSynthesizer();
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
@@ -172,7 +178,7 @@ namespace datascience_project
             return false;
         }
 
-       
+
         private string GetClickedSentence()
         {
             // Get the index of the clicked character in the TextBox
@@ -227,59 +233,61 @@ namespace datascience_project
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form3().ShowDialog();
+            new Form3().Show();
         }
 
         private void BtnCateogry_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form1().ShowDialog();
+            new Form1().Show();
         }
 
         private void BtnSub_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form3().ShowDialog();
+            new Form3().Show();
         }
 
         private void BtnLink_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form2().ShowDialog();
+            new Form2().Show();
         }
 
         private void BtnViewTab_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new view().ShowDialog();
+            new view().Show();
         }
 
         private void BtnUser_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new user_management().ShowDialog();
+            new user_management().Show();
         }
 
         private void BtnLogingOut_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new LoginPage().ShowDialog();
+            string msg = "Are you sure you want to logout";
+            new logoutpopup(msg).Show();
         }
 
-        private void bunifuDropdown2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new View_Link_Content().ShowDialog();
+            new View_Link_Content().Show();
 
         }
 
-     
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
 
-   
+        private void panel5_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            new import().Show();
+        }
     }
 }

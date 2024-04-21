@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.dashboardbtn = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.panel6.Controls.Add(this.button1);
+            this.panel6.Controls.Add(this.btnImport);
             this.panel6.Controls.Add(this.dashboardbtn);
             this.panel6.Controls.Add(this.btnLogout);
             this.panel6.Controls.Add(this.btnView);
@@ -87,20 +87,20 @@
             this.panel6.Size = new System.Drawing.Size(167, 494);
             this.panel6.TabIndex = 12;
             // 
-            // button1
+            // btnImport
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 238);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 60);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Link Contents";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Location = new System.Drawing.Point(3, 289);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(164, 47);
+            this.btnImport.TabIndex = 36;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // dashboardbtn
             // 
@@ -140,7 +140,7 @@
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnView.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnView.ForeColor = System.Drawing.Color.White;
-            this.btnView.Location = new System.Drawing.Point(3, 188);
+            this.btnView.Location = new System.Drawing.Point(3, 195);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(164, 60);
             this.btnView.TabIndex = 34;
@@ -155,7 +155,7 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Location = new System.Drawing.Point(0, 304);
+            this.btnUsers.Location = new System.Drawing.Point(3, 240);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(164, 60);
             this.btnUsers.TabIndex = 33;
@@ -174,7 +174,7 @@
             this.btnLinks.Name = "btnLinks";
             this.btnLinks.Size = new System.Drawing.Size(164, 60);
             this.btnLinks.TabIndex = 32;
-            this.btnLinks.Text = "Links";
+            this.btnLinks.Text = "Sources";
             this.btnLinks.UseVisualStyleBackColor = false;
             this.btnLinks.Click += new System.EventHandler(this.linkToolStripMenuItem_Click);
             // 
@@ -189,7 +189,7 @@
             this.btnSubCategory.Name = "btnSubCategory";
             this.btnSubCategory.Size = new System.Drawing.Size(164, 60);
             this.btnSubCategory.TabIndex = 31;
-            this.btnSubCategory.Text = "Sub Category";
+            this.btnSubCategory.Text = "Indicators";
             this.btnSubCategory.UseVisualStyleBackColor = false;
             this.btnSubCategory.Click += new System.EventHandler(this.subCategoryToolStripMenuItem_Click);
             // 
@@ -204,7 +204,7 @@
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(164, 60);
             this.btnCategory.TabIndex = 30;
-            this.btnCategory.Text = "Category";
+            this.btnCategory.Text = "Projects";
             this.btnCategory.UseVisualStyleBackColor = false;
             this.btnCategory.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
@@ -335,7 +335,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(252, 61);
             this.button10.TabIndex = 8;
-            this.button10.Text = "Sub Categories";
+            this.button10.Text = "Total Indicators";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.subCategoryToolStripMenuItem_Click);
             // 
@@ -383,7 +383,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(252, 61);
             this.button8.TabIndex = 8;
-            this.button8.Text = "Total Links";
+            this.button8.Text = "Total Data Sources";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.linkToolStripMenuItem_Click);
             // 
@@ -432,7 +432,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(252, 61);
             this.button7.TabIndex = 7;
-            this.button7.Text = "Total Categories";
+            this.button7.Text = "Total Projects";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
@@ -521,6 +521,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_total_category;
         private System.Windows.Forms.Button dashboardbtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImport;
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,7 @@ namespace datascience_project
             btnOk.Visible = true;
             pictureBox1.Visible = true;
         }
+       
         public popup()
         {
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace datascience_project
             btnOk.Visible = true;
             pictureBox1.Visible = true;
         }
+      
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 

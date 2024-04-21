@@ -40,7 +40,7 @@ namespace datascience_project
             {
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlCommand sqlCommand = new SqlCommand("select count(categoryid) from category",con);
+                SqlCommand sqlCommand = new SqlCommand("select count(project_id) from projects",con);
                 int total_categories = int.Parse(sqlCommand.ExecuteScalar().ToString());
                 label_total_category.Text = total_categories.ToString();
                 con.Close();
@@ -57,7 +57,7 @@ namespace datascience_project
             {
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlCommand sqlCommand = new SqlCommand("select count(subcategory_id) from subcategory", con);
+                SqlCommand sqlCommand = new SqlCommand("select count(indicator_id) from indicators", con);
                 int total_sub_categories = int.Parse(sqlCommand.ExecuteScalar().ToString());
                 label_total_sub_category.Text = total_sub_categories.ToString();
                 con.Close();
@@ -74,7 +74,7 @@ namespace datascience_project
             {
                 SqlConnection con = new SqlConnection("Data Source=192.168.1.102;Initial Catalog=datasience_db;User ID=sa;Password=Allah@786;Encrypt=False");
                 con.Open();
-                SqlCommand sqlCommand = new SqlCommand("select count(link_id) from link", con);
+                SqlCommand sqlCommand = new SqlCommand("select count(source_id) from sources", con);
                 int total_links = int.Parse(sqlCommand.ExecuteScalar().ToString());
                 label_total_links.Text = total_links.ToString();
                 con.Close();
@@ -132,8 +132,8 @@ namespace datascience_project
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new LoginPage().Show();
+            string msg = "Are you sure you want to logout";
+            new logoutpopup(msg).Show();
         }
 
 
@@ -177,6 +177,11 @@ namespace datascience_project
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            new import().Show();
         }
     }
 }

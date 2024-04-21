@@ -43,7 +43,7 @@ namespace datascience_project
                 {
                     con.Open();
                 }
-                SqlDataAdapter sda = new SqlDataAdapter("select * from subcategory", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select * from indicators", con);
                 System.Data.DataTable dt = new System.Data.DataTable();
                 sda.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -66,9 +66,9 @@ namespace datascience_project
                     {
                         con.Open();
                     }
-                    SqlCommand cmd = new SqlCommand("insert into subcategory values (@subcategoryname,@category_id)", con);
-                    cmd.Parameters.AddWithValue("@subcategoryname", textbox_sub_categoryname.Text);
-                    cmd.Parameters.AddWithValue("@category_id", int.Parse(ddl_category_name.SelectedValue.ToString()));
+                    SqlCommand cmd = new SqlCommand("insert into indicators values (@indicator_name,@project_id)", con);
+                    cmd.Parameters.AddWithValue("@indicator_name", textbox_sub_categoryname.Text);
+                    cmd.Parameters.AddWithValue("@project_id", int.Parse(ddl_category_name.SelectedValue.ToString()));
                     cmd.ExecuteNonQuery();
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
@@ -109,10 +109,10 @@ namespace datascience_project
                     {
                         con.Open();
                     }
-                    SqlCommand cmd = new SqlCommand("update subcategory set subcategory_name = @subcategory_name,category_id= @category_id where subcategory_id = @subcategory_id", con);
-                    cmd.Parameters.AddWithValue("@subcategory_name", textbox_sub_categoryname.Text);
-                    cmd.Parameters.AddWithValue("@category_id", ddl_category_name.SelectedValue);
-                    cmd.Parameters.AddWithValue("@subcategory_id", sub_category_id);
+                    SqlCommand cmd = new SqlCommand("update indicators set indicator_name = @indicator_name,project_id= @project_id where indicator_id = @indicator_id", con);
+                    cmd.Parameters.AddWithValue("@indicator_name", textbox_sub_categoryname.Text);
+                    cmd.Parameters.AddWithValue("@project_id", ddl_category_name.SelectedValue);
+                    cmd.Parameters.AddWithValue("@indicator_id", sub_category_id);
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
@@ -163,8 +163,8 @@ namespace datascience_project
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("delete from subcategory where subcategory_id = @subcategory_id", con);
-                cmd.Parameters.AddWithValue("@subcategory_id", sub_category_id);
+                SqlCommand cmd = new SqlCommand("delete from indicators where indicator_id = @indicator_id", con);
+                cmd.Parameters.AddWithValue("@indicator_id", sub_category_id);
                 btnDelete.Enabled = false;
                 btnUpdate.Enabled = false;
                 btnSave.Enabled = true;
@@ -209,8 +209,8 @@ namespace datascience_project
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new LoginPage().Show();
+            string msg = "Are you sure you want to logout";
+            new logoutpopup(msg).Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -258,12 +258,12 @@ namespace datascience_project
                 {
                     con.Open();
                 }
-                SqlDataAdapter sda = new SqlDataAdapter("select * from category", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select * from projects", con);
                 System.Data.DataTable dt = new System.Data.DataTable();
                 sda.Fill(dt);
                 ddl_category_name.DataSource = dt;
-                ddl_category_name.ValueMember = "categoryid";
-                ddl_category_name.DisplayMember = "category_name";
+                ddl_category_name.ValueMember = "project_id";
+                ddl_category_name.DisplayMember = "project_name";
             }
             catch (Exception ee)
             {
@@ -279,7 +279,7 @@ namespace datascience_project
                 {
                     con.Open();
                 }
-                SqlDataAdapter sda = new SqlDataAdapter("select * from subcategory", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select * from indicators", con);
                 System.Data.DataTable dt = new System.Data.DataTable();
                 sda.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -301,6 +301,11 @@ namespace datascience_project
             this.Hide();
             new View_Link_Content().ShowDialog();
 
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            new import().Show();
         }
     }
 }

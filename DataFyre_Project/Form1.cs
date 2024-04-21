@@ -26,6 +26,7 @@ namespace datascience_project
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         public void clearFields()
         {
             textbox_categoryname.Clear();
@@ -71,8 +72,8 @@ namespace datascience_project
                     {
                         con.Open();
                     }
-                    SqlCommand cmd = new SqlCommand("insert into category values (@category_name)", con);
-                    cmd.Parameters.AddWithValue("@category_name", textbox_categoryname.Text);
+                    SqlCommand cmd = new SqlCommand("insert into projects values (@projects_name)", con);
+                    cmd.Parameters.AddWithValue("@projects_name", textbox_categoryname.Text);
                     cmd.ExecuteNonQuery();
                     new popup(msg).ShowDialog();
                     con.Close();
@@ -104,9 +105,9 @@ namespace datascience_project
                     {
                         con.Open();
                     }
-                    SqlCommand cmd = new SqlCommand("update category set category_name = @category_name where categoryid = @categoryid", con);
-                    cmd.Parameters.AddWithValue("@category_name", textbox_categoryname.Text);
-                    cmd.Parameters.AddWithValue("@categoryid", category_id);
+                    SqlCommand cmd = new SqlCommand("update projects set project_name = @project_name where project_id = @project_id", con);
+                    cmd.Parameters.AddWithValue("@project_name", textbox_categoryname.Text);
+                    cmd.Parameters.AddWithValue("@project_id", category_id);
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSave.Enabled = true;
@@ -136,8 +137,8 @@ namespace datascience_project
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("delete from category where categoryid = @categoryid", con);
-                cmd.Parameters.AddWithValue("@categoryid", category_id);
+                SqlCommand cmd = new SqlCommand("delete from projects where project_id = @project_id", con);
+                cmd.Parameters.AddWithValue("@project_id", category_id);
                 cmd.ExecuteNonQuery();
                 btnDelete.Enabled = false;
                 btnUpdate.Enabled = false;
@@ -183,8 +184,9 @@ namespace datascience_project
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new LoginPage().Show();
+            string msg = "Are you sure you want to logout";
+            new logoutpopup(msg).Show();
+
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -228,10 +230,11 @@ namespace datascience_project
             try
             {
                 con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("select * from category", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select project_id as 'Project ID', project_name as 'Project Name' from projects", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView1.DataSource = dt;
+
             }
             catch (Exception ee)
             {
